@@ -2,16 +2,15 @@
 
 ## Features
 
-- [x] - PNPM
+- [x]	 - PNPM
 - [x] - TypeScript, of course
 - [x] - [Eslint](https://github.com/antfu/eslint-config)
 - [x] - Tailwindcss
 - [x] - Nuxt-I18n
-- [] - State Management via Pinia
-- [] - Icons
-- [] - Working with APIs
-- [] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
-- [] - E2E testing with Cypress or Playwright
+- [ ] - State Management via Pinia
+- [ ] - Icons
+- [ ] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
+- [ ] - E2E testing with Cypress or Playwright
 
 ## IDE
 
