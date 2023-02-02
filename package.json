@@ -5,9 +5,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.35.1",
+    "eslint": "^8.33.0",
     "nuxt": "^3.1.1"
   }
 }
