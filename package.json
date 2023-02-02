@@ -10,8 +10,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "pnpm lint --fix",
-    "prepare": "husky install",
-    "cleanup": "pnpm dlx nuxi cleanup && rimraf node_modules && pnpm install"
+    "cleanup": "nuxt cleanup && rimraf node_modules && pnpm install",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
