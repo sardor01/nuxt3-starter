@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <h1>Nuxt3 Starter</h1>
-  </div>
+  <h1 class="text-3xl font-bold">
+    Nuxt3 Starter
+  </h1>
 </template>
