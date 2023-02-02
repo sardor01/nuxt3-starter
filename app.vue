@@ -1,5 +1,16 @@
+<script setup lang="ts">
+useHead({
+  title: 'Nuxt3 Starter',
+  link: [
+    {
+      rel: 'icon', type: 'image/png', href: '/nuxt.png',
+    },
+  ],
+})
+</script>
+
 <template>
-  <h1 class="text-3xl font-bold">
-    Nuxt3 Starter
-  </h1>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
