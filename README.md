@@ -2,7 +2,7 @@
 
 ## Features
 
-- [x]	 - PNPM
+- [x]	- PNPM
 - [x] - TypeScript, of course
 - [x] - [Eslint](https://github.com/antfu/eslint-config)
 - [x] - Tailwindcss
