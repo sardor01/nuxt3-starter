@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "pnpm lint --fix",
+    "typecheck": "pnpm typecheck",
     "cleanup": "nuxt cleanup && rimraf node_modules && pnpm install",
     "prepare": "husky install"
   },
