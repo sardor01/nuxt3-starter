@@ -1,12 +1,12 @@
-# Opinionated starter template for Nuxt 3
+# Opinionated [Nuxt 3](https://nuxt.com/docs/guide) Starter
 
 ## Features
 
 - [x]	- PNPM
-- [x] - TypeScript, of course
+- [x] - TypeScript
 - [x] - [Eslint](https://github.com/antfu/eslint-config)
-- [x] - Tailwindcss
-- [x] - Nuxt-I18n
+- [x] - [Tailwindcss](https://tailwindcss.com/docs)
+- [x] - [Nuxt-I18N](https://v8.i18n.nuxtjs.org)
 - [x] - Icons - https://fontawesome.com/search?o=r&m=free
 - [ ] - State Management via Pinia
 - [ ] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
