@@ -7,8 +7,8 @@
 - [x] - [Eslint](https://github.com/antfu/eslint-config)
 - [x] - Tailwindcss
 - [x] - Nuxt-I18n
+- [x] - Icons - https://fontawesome.com/search?o=r&m=free
 - [ ] - State Management via Pinia
-- [ ] - Icons
 - [ ] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
 - [ ] - E2E testing with Cypress or Playwright
 
