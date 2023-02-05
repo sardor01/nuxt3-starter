@@ -8,7 +8,9 @@
 - [x] - [Tailwindcss](https://tailwindcss.com/docs)
 - [x] - [Nuxt-I18N](https://v8.i18n.nuxtjs.org)
 - [x] - Icons - https://fontawesome.com/search?o=r&m=free
+- [ ] - Base components: Button, Input, Select, Checkbox, Radio, Modal, Dropdown, Alert, Toast, Tabs, Accordion, Card, Table, Pagination, Progress, Spinner, Tooltip, Popover, etc.
 - [ ] - State Management via Pinia
+- [ ] - Form validation via [Vee-Validate](https://vee-validate.logaretm.com/v4) and [Zod](https://zod.dev)
 - [ ] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
 - [ ] - E2E testing with Cypress or Playwright
 
