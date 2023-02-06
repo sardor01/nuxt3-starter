@@ -35,7 +35,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.11.19",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.33.0",
     "husky": "^8.0.0",
