@@ -48,6 +48,6 @@
     "vue-tsc": "^1.0.24"
   },
   "lint-staged": {
-    "*": "pnpm lint:fix"
+    "*.{vue,js,cjs,mjs,ts,cts,mts,json,md,yaml}": "pnpm lint:fix"
   }
 }
