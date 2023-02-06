@@ -28,7 +28,7 @@ const props = withDefaults(
     triggerClass: '',
     tooltipClass: 'w-max',
     menuClass: '',
-    itemsClass: 'py-1 px-2 first:pb-2 last:pt-2',
+    itemsClass: 'p-1',
     itemClass: '',
   },
 )

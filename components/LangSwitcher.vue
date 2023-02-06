@@ -10,15 +10,15 @@ watch(selectedLocale, (value) => {
 
 <template>
   <BaseDropdown
-    :items="[locales, locales]"
+    :items="[locales]"
     strategy="absolute"
     placement="bottom"
     class="hidden sm:inline-flex"
-    trigger-class="rounded-lg"
-    items-class="py-1 px-2 first:pb-2 last:pt-2"
+    trigger-class="rounded-md"
+    items-class="py-1 px-2"
   >
     <template #trigger>
-      <span class="flex items-center capitalize rounded-lg py-1 px-2">
+      <span class="flex items-center capitalize rounded-md py-1 px-2">
         <span class="font-medium ml-0.5 mr-1.5">{{ currentLocale }}</span>
         <fa-icon icon="fa-solid fa-chevron-down" class="fa-xs text-gray" />
       </span>
@@ -27,7 +27,7 @@ watch(selectedLocale, (value) => {
       <BaseButton
         variant="none"
         size="none"
-        class="min-w-[100px] rounded-lg py-1 px-2"
+        class="min-w-[100px] rounded-md py-1 px-2"
         :centered="false"
         @click="typeof item === 'string' ? selectedLocale = item : selectedLocale = item.code"
       >
