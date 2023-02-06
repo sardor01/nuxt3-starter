@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
   type?: 'button' | 'submit'
-  variant?: 'blue' | 'red'
+  variant?: 'blue' | 'red' | 'none'
   size?: 'sm' | 'md' | 'lg' | 'link' | 'none'
   href?: string
   link?: boolean
@@ -28,11 +28,13 @@ const btnVariant = computed(() => {
         return 'text-red focus-visible:ring-red/30'
       return 'bg-red text-white hover:bg-red-light hover:border-red-light border border-red focus-visible:ring-red/30'
     }
-    default: {
+    case 'blue': {
       if (props.link)
         return 'text-blue focus-visible:ring-blue/30'
       return 'bg-blue text-white hover:bg-blue-light hover:border-blue-light border border-blue'
     }
+    default:
+      return 'focus-visible:ring-blue/30'
   }
 })
 
