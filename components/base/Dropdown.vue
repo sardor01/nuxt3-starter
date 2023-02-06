@@ -120,7 +120,7 @@ onBeforeMount(() => {
       <slot name="trigger" :open="open" />
     </BaseButton>
 
-    <transition
+    <Transition
       leave-to-class="transform opacity-0 scale-95"
       enter-from-class="transform opacity-0 scale-95"
       enter-to-class="transform opacity-100 scale-100"
@@ -164,6 +164,6 @@ onBeforeMount(() => {
           <slot name="footer" />
         </div>
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>

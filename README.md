@@ -10,7 +10,7 @@
 - [x] - Icons - https://fontawesome.com/search?o=r&m=free
 - [x] - State Management via Pinia
 - [ ] - Base components: Button, Input, Select, Checkbox, Radio, Modal, Dropdown, Alert, Toast, Tabs, Accordion, Card, Table, Pagination, Progress, Spinner, Tooltip, Popover, etc.
-- [ ] - Form validation via [Vee-Validate](https://vee-validate.logaretm.com/v4) and [Yuo](https://github.com/jquense/yup)
+- [ ] - Form validation via [Vee-Validate](https://vee-validate.logaretm.com/v4) and [Yup](https://github.com/jquense/yup)
 - [ ] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
 - [ ] - E2E testing with Cypress or Playwright
 
