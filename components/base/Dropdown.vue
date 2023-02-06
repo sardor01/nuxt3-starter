@@ -28,7 +28,7 @@ const props = withDefaults(
     triggerClass: '',
     tooltipClass: 'w-max',
     menuClass: '',
-    itemsClass: 'p-1',
+    itemsClass: 'py-1 px-2 first:pb-2 last:pt-2',
     itemClass: '',
   },
 )
@@ -135,8 +135,8 @@ onBeforeMount(() => {
         :class="tooltipClass"
       >
         <div
-          class="bg-blue text-white shadow-dropdown rounded-lg overflow-y-auto divide-y divide-dark-lighter py-1"
-          :class="menuClass"
+          class="shadow-xl rounded-lg overflow-y-auto divide-y py-1"
+          :class="menuClass || 'bg-gray-light text-blue divide-blue/50'"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
