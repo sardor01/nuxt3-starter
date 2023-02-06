@@ -79,6 +79,9 @@ module.exports = {
         12: '3rem',
         14: '3.5rem',
       },
+      zIndex: {
+        modal: '1000',
+      },
     },
   },
   plugins: [

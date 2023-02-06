@@ -12,6 +12,7 @@ specifiers:
   '@nuxtjs/i18n': 8.0.0-beta.9
   '@pinia/nuxt': ^0.4.6
   '@popperjs/core': ^2.11.6
+  '@splidejs/vue-splide': ^0.6.12
   '@tailwindcss/aspect-ratio': ^0.4.2
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/line-clamp': ^0.4.2
@@ -40,6 +41,7 @@ dependencies:
   '@fortawesome/vue-fontawesome': 3.0.3_racjk66yhsrllnmqehkutgod64
   '@pinia/nuxt': 0.4.6_hmuptsblhheur2tugfgucj7gc4
   '@popperjs/core': 2.11.6
+  '@splidejs/vue-splide': 0.6.12
   '@vueuse/core': 9.12.0_vue@3.2.47
   pinia: 2.0.30_hmuptsblhheur2tugfgucj7gc4
   vee-validate: 4.7.3_vue@3.2.47
@@ -1819,6 +1821,16 @@ packages:
       picomatch: 2.3.1
       rollup: 3.13.0
     dev: true
+
+  /@splidejs/splide/4.1.4:
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
+    dev: false
+
+  /@splidejs/vue-splide/0.6.12:
+    resolution: {integrity: sha512-eQb8pnGMN8Tr0FVaQo1PUMZlMHl8fSqHNXPTx79eeE2dkZqbsvq6jRzXoT9ZF7hFkxdOEmB6qYNp93SUwV684g==}
+    dependencies:
+      '@splidejs/splide': 4.1.4
+    dev: false
 
   /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.2.4:
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}

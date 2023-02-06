@@ -22,6 +22,12 @@ const showModal = ref(false)
         </NuxtLink>
       </div>
     </div>
+    <div class="space-y-1">
+      <h2 class="text-xl font-semibold">
+        Carousel:
+      </h2>
+      <HomeShowcaseCarousel />
+    </div>
 
     <BaseModal
       v-model:show="showModal"

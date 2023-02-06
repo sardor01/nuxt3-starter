@@ -82,8 +82,8 @@ watch(modalActive, (value) => {
 
 <template>
   <Teleport to="body">
-    <div v-if="modalActive" class="relative">
-      <div class="fixed inset-0 bg-black bg-opacity-30" />
+    <div v-if="modalActive" class="relative z-modal">
+      <div class="fixed inset-0 bg-black bg-opacity-50" />
 
       <div class="fixed inset-0" @keydown.esc="handleClose">
         <div class="w-full h-full flex items-center justify-center p-4">
