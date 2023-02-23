@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.26.3",
+  "packageManager": "pnpm@7.27.1",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "nuxt dev",
@@ -22,7 +22,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@pinia/nuxt": "^0.4.7",
     "@popperjs/core": "^2.11.6",
-    "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/core": "^9.13.0",
     "pinia": "^2.0.32",
     "vee-validate": "^4.7.4",

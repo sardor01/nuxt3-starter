@@ -35,7 +35,7 @@ const props = withDefaults(
 
 const route = useRoute()
 const open = ref(false)
-const container = ref<HTMLElement | null>(null)
+const dropdown = ref<HTMLElement | null>(null)
 const tooltip = ref<HTMLElement | null>(null)
 const instance = ref<PopperInstance | null>(null)
 
@@ -51,16 +51,16 @@ const handleToggle = () => {
   open.value = !open.value
 }
 
-onClickOutside(container, handleClose)
+onClickOutside(dropdown, handleClose)
 
 watch(open, (value) => {
-  if (!value || !container.value || !tooltip.value)
+  if (!value || !dropdown.value || !tooltip.value)
     return
   if (instance.value) {
     instance.value.destroy()
     instance.value = null
   }
-  instance.value = createPopper(container.value, tooltip.value, {
+  instance.value = createPopper(dropdown.value, tooltip.value, {
     strategy: props.strategy,
     placement: props.placement,
     modifiers: [
@@ -104,7 +104,7 @@ onBeforeMount(() => {
 
 <template>
   <div
-    ref="container"
+    ref="dropdown"
     class="relative inline-flex justify-center items-center cursor-pointer"
     @keydown.esc="handleClose"
     @mouseover="mode === 'hover' ? handleOpen() : () => {}"

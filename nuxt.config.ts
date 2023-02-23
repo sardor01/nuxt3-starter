@@ -2,9 +2,9 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/tailwind.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '@splidejs/vue-splide/css',
   ],
   modules: [
+    '~/modules/fontawesome',
     [
       '@pinia/nuxt',
       {
@@ -41,6 +41,12 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  runtimeConfig: {
+    public: {
+      apiURL: '',
+      assetURL: '',
     },
   },
   build: {

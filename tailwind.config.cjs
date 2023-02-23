@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const backfaceVisibility = plugin(({ addUtilities }) => {
   addUtilities({
@@ -37,6 +38,7 @@ module.exports = {
       gray: {
         light: '#f1f3f5',
         DEFAULT: '#b6c5d2',
+        dark: '#7f8a93',
       },
       blue: {
         light: '#184368',
@@ -53,11 +55,19 @@ module.exports = {
       sans: ['Inter', 'sans-serif'],
       serif: ['Roboto Slab', 'serif'],
     },
+    screens: {
+      '2xs': '330px',
+      'xs': '570px',
+      ...defaultTheme.screens,
+    },
     extend: {
+      aspectRatio: {
+        square: '1/1',
+      },
       fontSize: {
+        '0.5xs': ['0.625rem', '0.75rem'],
         '2.5xl': ['1.75rem', '2.125rem'],
         '3.5xl': ['2rem', '2.375rem'],
-        '0.5xs': ['0.625rem', '0.75rem'],
       },
       minWidth: {
         'xs': '20rem',
@@ -79,8 +89,20 @@ module.exports = {
         12: '3rem',
         14: '3.5rem',
       },
+      spacing: {
+        13: '3.25rem',
+        18: '4.5rem',
+        22: '5.5rem',
+        25: '6.25rem',
+        50: '12.5rem',
+        86: '21.5rem',
+        90: '22.5rem',
+        180: '45rem',
+      },
       zIndex: {
         modal: '1000',
+        navigationDrawer: '1100',
+        overlay: '999',
       },
     },
   },

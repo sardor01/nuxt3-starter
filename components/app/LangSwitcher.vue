@@ -13,14 +13,16 @@ watch(selectedLocale, (value) => {
     :items="[locales]"
     strategy="absolute"
     placement="bottom"
-    class="hidden sm:inline-flex"
+    class="inline-flex"
     trigger-class="rounded-md"
     items-class="py-1 px-2"
   >
     <template #trigger>
       <span class="flex items-center capitalize rounded-md py-1 px-2">
-        <span class="font-medium ml-0.5 mr-1.5">{{ currentLocale }}</span>
-        <fa-icon icon="fa-solid fa-chevron-down" class="fa-xs text-gray" />
+        <span class="font-semibold text-red ml-0.5 mr-1.5">
+          {{ currentLocale }}
+        </span>
+        <fa-icon icon="fa-solid fa-chevron-down" class="fa-xs text-gray-dark" />
       </span>
     </template>
     <template #item="{ item }: { item: typeof locales.value[number] }">
