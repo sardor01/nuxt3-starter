@@ -3,6 +3,6 @@
     <h2 class="text-lg font-medium mb-2">
       <FontAwesomeIcon icon="fa-solid fa-user" />
     </h2>
-    <LangSwitcher />
+    <AppLangSwitcher />
   </div>
 </template>

@@ -224,7 +224,7 @@ onBeforeUpdate(() => {
         @click="prevPage()"
         @keyup.enter="prevPage()"
       >
-        <fa-icon icon="fa-solid fa-angles-left" class="fa-md" />
+        <FontAwesomeIcon icon="fa-solid fa-angles-left" class="fa-md" />
       </BaseButton>
     </li>
 
@@ -283,7 +283,7 @@ onBeforeUpdate(() => {
         @click="nextPage()"
         @keyup.enter="nextPage()"
       >
-        <fa-icon icon="fa-solid fa-angles-right" class="fa-md" />
+        <FontAwesomeIcon icon="fa-solid fa-angles-right" class="fa-md" />
       </BaseButton>
     </li>
 

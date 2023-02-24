@@ -88,7 +88,7 @@ const btnSize = computed(() => {
       disableButton && 'pointer-events-none opacity-80',
     ]"
   >
-    <fa-icon
+    <FontAwesomeIcon
       v-if="loading"
       icon="fa-solid fa-spinner"
       class="fa-spin"

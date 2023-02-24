@@ -22,7 +22,7 @@ watch(selectedLocale, (value) => {
         <span class="font-semibold text-red ml-0.5 mr-1.5">
           {{ currentLocale }}
         </span>
-        <fa-icon icon="fa-solid fa-chevron-down" class="fa-xs text-gray-dark" />
+        <FontAwesomeIcon icon="fa-solid fa-chevron-down" class="fa-xs text-gray-dark" />
       </span>
     </template>
     <template #item="{ item }: { item: typeof locales.value[number] }">
