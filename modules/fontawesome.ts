@@ -1,4 +1,4 @@
-import { addComponent, defineNuxtModule } from '@nuxt/kit'
+import { addComponent, defineNuxtModule } from 'nuxt/kit'
 import * as fontawesome from '@fortawesome/vue-fontawesome'
 
 export default defineNuxtModule({
