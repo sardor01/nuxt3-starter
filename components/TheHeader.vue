@@ -1,3 +1,7 @@
 <template>
-  <header>Header</header>
+  <header class="py-4 text-center">
+    <BaseContainer>
+      Header
+    </BaseContainer>
+  </header>
 </template>

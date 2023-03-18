@@ -69,6 +69,13 @@ module.exports = {
         '2.5xl': ['1.75rem', '2.125rem'],
         '3.5xl': ['2rem', '2.375rem'],
       },
+      minHeight: {
+        8: '2rem',
+        10: '2.5rem',
+        11: '2.75rem',
+        12: '3rem',
+        14: '3.5rem',
+      },
       minWidth: {
         'xs': '20rem',
         'sm': '24rem',
@@ -82,13 +89,6 @@ module.exports = {
         '6xl': '72rem',
         '7xl': '80rem',
       },
-      minHeight: {
-        8: '2rem',
-        10: '2.5rem',
-        11: '2.75rem',
-        12: '3rem',
-        14: '3.5rem',
-      },
       spacing: {
         13: '3.25rem',
         18: '4.5rem',
@@ -100,9 +100,9 @@ module.exports = {
         180: '45rem',
       },
       zIndex: {
+        overlay: '999',
         modal: '1000',
         navigationDrawer: '1100',
-        overlay: '999',
       },
     },
   },

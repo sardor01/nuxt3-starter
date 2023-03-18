@@ -1,15 +1,9 @@
 export default defineNuxtConfig({
   css: [
-    '~/assets/css/tailwind.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
+    '~/assets/css/tailwind.css',
   ],
   modules: [
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: ['acceptHMRUpdate', 'defineStore', 'storeToRefs'],
-      },
-    ],
     [
       '@nuxtjs/i18n',
       {
