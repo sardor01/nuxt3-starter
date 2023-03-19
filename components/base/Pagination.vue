@@ -24,7 +24,8 @@ const props = withDefaults(
     firstButtonText?: string
     lastButtonText?: string
     hidePrevNext?: boolean
-  }>(), {
+  }>(),
+  {
     clickHandler: () => {},
     pageRange: 3,
     marginPages: 1,
@@ -36,7 +37,7 @@ const props = withDefaults(
     firstButtonText: 'First',
     lastButtonText: 'Last',
     hidePrevNext: false,
-  },
+  }
 )
 
 const emit = defineEmits(['input'])
@@ -86,8 +87,7 @@ const pages = computed(() => {
       }
       items[index] = page
     }
-  }
-  else {
+  } else {
     const halfPageRange = Math.floor(pageRange.value / 2)
     const setPageItem = (index: number) => {
       const page = {
@@ -104,45 +104,32 @@ const pages = computed(() => {
       }
       items[index] = breakView
     }
-    for (let i = 0; i < marginPages.value; i++)
-      setPageItem(i)
+    for (let i = 0; i < marginPages.value; i++) setPageItem(i)
 
     let selectedRangeLow = 0
-    if (selected.value - halfPageRange > 0)
-      selectedRangeLow = selected.value - 1 - halfPageRange
+    if (selected.value - halfPageRange > 0) selectedRangeLow = selected.value - 1 - halfPageRange
 
     let selectedRangeHigh = selectedRangeLow + pageRange.value - 1
     if (selectedRangeHigh >= pageCount.value) {
       selectedRangeHigh = pageCount.value - 1
       selectedRangeLow = selectedRangeHigh - pageRange.value + 1
     }
-    for (
-      let i = selectedRangeLow;
-      i <= selectedRangeHigh && i <= pageCount.value - 1;
-      i++
-    )
+    for (let i = selectedRangeLow; i <= selectedRangeHigh && i <= pageCount.value - 1; i++)
       setPageItem(i)
 
-    if (selectedRangeLow > marginPages.value)
-      setBreakView(selectedRangeLow - 1)
+    if (selectedRangeLow > marginPages.value) setBreakView(selectedRangeLow - 1)
 
     if (selectedRangeHigh + 1 < pageCount.value - marginPages.value)
       setBreakView(selectedRangeHigh + 1)
 
-    for (
-      let i = pageCount.value - 1;
-      i >= pageCount.value - marginPages.value;
-      i--
-    )
-      setPageItem(i)
+    for (let i = pageCount.value - 1; i >= pageCount.value - marginPages.value; i--) setPageItem(i)
   }
 
   return items
 })
 
 const handlePageSelected = (pageSelected: number) => {
-  if (selected.value === pageSelected)
-    return
+  if (selected.value === pageSelected) return
 
   innerValue.value = pageSelected
   emit('input', pageSelected)
@@ -150,15 +137,13 @@ const handlePageSelected = (pageSelected: number) => {
 }
 
 const prevPage = () => {
-  if (selected.value <= 1)
-    return
+  if (selected.value <= 1) return
 
   handlePageSelected(selected.value - 1)
 }
 
 const nextPage = () => {
-  if (selected.value >= pageCount.value)
-    return
+  if (selected.value >= pageCount.value) return
 
   handlePageSelected(selected.value + 1)
 }
@@ -172,34 +157,27 @@ const lastPageSelected = () => {
 }
 
 const selectFirstPage = () => {
-  if (selected.value <= 1)
-    return
+  if (selected.value <= 1) return
 
   handlePageSelected(1)
 }
 
 const selectLastPage = () => {
-  if (selected.value >= pageCount.value)
-    return
+  if (selected.value >= pageCount.value) return
 
   handlePageSelected(pageCount.value)
 }
 
 onBeforeUpdate(() => {
-  if (forcePage?.value === undefined)
-    return
+  if (forcePage?.value === undefined) return
 
-  if (forcePage.value !== selected.value)
-    selected.value = forcePage.value
+  if (forcePage.value !== selected.value) selected.value = forcePage.value
 })
 </script>
 
 <template>
   <ul :class="containerClass">
-    <li
-      v-if="firstLastButton"
-      :class="[pageClass, firstPageSelected() ? disabledClass : '']"
-    >
+    <li v-if="firstLastButton" :class="[pageClass, firstPageSelected() ? disabledClass : '']">
       <BaseButton
         variant="none"
         size="none"
@@ -287,10 +265,7 @@ onBeforeUpdate(() => {
       </BaseButton>
     </li>
 
-    <li
-      v-if="firstLastButton"
-      :class="[pageClass, lastPageSelected() ? disabledClass : '']"
-    >
+    <li v-if="firstLastButton" :class="[pageClass, lastPageSelected() ? disabledClass : '']">
       <BaseButton
         variant="none"
         size="none"

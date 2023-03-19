@@ -30,7 +30,7 @@ const props = withDefaults(
     menuClass: '',
     itemsClass: 'p-1',
     itemClass: '',
-  },
+  }
 )
 
 const route = useRoute()
@@ -54,8 +54,7 @@ const handleToggle = () => {
 onClickOutside(dropdown, handleClose)
 
 watch(open, (value) => {
-  if (!value || !dropdown.value || !tooltip.value)
-    return
+  if (!value || !dropdown.value || !tooltip.value) return
   if (instance.value) {
     instance.value.destroy()
     instance.value = null
@@ -91,7 +90,7 @@ watch(
   () => route.path,
   () => {
     open.value = false
-  },
+  }
 )
 
 onBeforeMount(() => {
@@ -105,7 +104,7 @@ onBeforeMount(() => {
 <template>
   <div
     ref="dropdown"
-    class="relative inline-flex justify-center items-center cursor-pointer"
+    class="relative inline-flex cursor-pointer items-center justify-center"
     @keydown.esc="handleClose"
     @mouseover="mode === 'hover' ? handleOpen() : () => {}"
     @mouseleave="mode === 'hover' ? handleClose() : () => {}"
@@ -135,8 +134,8 @@ onBeforeMount(() => {
         :class="tooltipClass"
       >
         <div
-          class="shadow-xl rounded-lg overflow-y-auto divide-y py-1"
-          :class="menuClass || 'bg-gray-light text-blue divide-blue/50'"
+          class="divide-y overflow-y-auto rounded-lg py-1 shadow-xl"
+          :class="menuClass || 'divide-blue/50 bg-gray-light text-blue'"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"

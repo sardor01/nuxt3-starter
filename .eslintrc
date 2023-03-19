@@ -1,6 +1,7 @@
 {
-  "extends": "@antfu",
+  "extends": ["@antfu", "plugin:prettier/recommended"],
   "rules": {
-    "no-console": "warn"
+    "no-console": "warn",
+    "antfu/if-newline": "off"
   }
 }

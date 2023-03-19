@@ -1,9 +1,9 @@
 <template>
-  <div class="flex relative bg-white text-blue">
-    <div class="flex-auto backface-hidden flex flex-col min-h-screen max-w-full relative">
+  <div class="relative flex bg-white text-blue">
+    <div class="relative flex min-h-screen max-w-full flex-auto flex-col backface-hidden">
       <TheHeader />
-      <div class="w-full flex flex-[1_0_auto] p-0">
-        <main class="flex-auto max-w-full relative">
+      <div class="flex w-full flex-[1_0_auto] p-0">
+        <main class="relative max-w-full flex-auto">
           <slot />
         </main>
       </div>
