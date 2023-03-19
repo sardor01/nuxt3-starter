@@ -1,8 +1,5 @@
 export default defineNuxtConfig({
-  css: [
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/css/tailwind.css',
-  ],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css', '~/assets/css/tailwind.css'],
   modules: [
     [
       '@nuxtjs/i18n',

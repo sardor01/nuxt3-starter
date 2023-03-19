@@ -3,7 +3,9 @@ useHead({
   title: 'Nuxt3 Starter',
   link: [
     {
-      rel: 'icon', type: 'image/png', href: '/nuxt.png',
+      rel: 'icon',
+      type: 'image/png',
+      href: '/nuxt.png',
     },
   ],
 })

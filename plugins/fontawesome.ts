@@ -10,12 +10,5 @@ import {
 
 export default defineNuxtPlugin(() => {
   config.autoAddCss = false
-  library.add(
-    faAnglesLeft,
-    faAnglesRight,
-    faChevronDown,
-    faMagnifyingGlass,
-    faSpinner,
-    faUser,
-  )
+  library.add(faAnglesLeft, faAnglesRight, faChevronDown, faMagnifyingGlass, faSpinner, faUser)
 })

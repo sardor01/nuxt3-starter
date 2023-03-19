@@ -18,20 +18,20 @@ watch(selectedLocale, (value) => {
     items-class="py-1 px-2"
   >
     <template #trigger>
-      <span class="flex items-center capitalize rounded-md py-1 px-2">
-        <span class="font-semibold text-red ml-0.5 mr-1.5">
+      <span class="flex items-center rounded-md py-1 px-2 capitalize">
+        <span class="ml-0.5 mr-1.5 font-semibold text-red">
           {{ currentLocale }}
         </span>
         <FontAwesomeIcon icon="fa-solid fa-chevron-down" class="fa-xs text-gray-dark" />
       </span>
     </template>
-    <template #item="{ item }: { item: typeof locales.value[number] }">
+    <template #item="{ item }: { item: (typeof locales.value)[number] }">
       <BaseButton
         variant="none"
         size="none"
         class="min-w-[100px] rounded-md py-1 px-2"
         :centered="false"
-        @click="typeof item === 'string' ? selectedLocale = item : selectedLocale = item.code"
+        @click="typeof item === 'string' ? (selectedLocale = item) : (selectedLocale = item.code)"
       >
         {{ typeof item === 'string' ? item : item.name }}
       </BaseButton>

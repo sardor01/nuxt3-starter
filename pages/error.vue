@@ -16,7 +16,9 @@ useHead({
   title: t(`pages.error.${errorDetails.title}`),
   link: [
     {
-      rel: 'icon', type: 'image/png', href: '/nuxt.png',
+      rel: 'icon',
+      type: 'image/png',
+      href: '/nuxt.png',
     },
   ],
 })
@@ -26,19 +28,19 @@ const handleError = () => clearError({ redirect: '/' })
 
 <template>
   <div
-    class="w-full min-h-screen flex justify-center items-center bg-white md:px-24 md:py-20 xl:px-40 xl:py-20"
+    class="flex min-h-screen w-full items-center justify-center bg-white md:px-24 md:py-20 xl:px-40 xl:py-20"
   >
     <div
-      class="w-full h-full flex flex-wrap flex-row justify-center items-center gap-8 rounded-lg py-4 px-10"
+      class="flex h-full w-full flex-row flex-wrap items-center justify-center gap-8 rounded-lg py-4 px-10"
     >
-      <img :src="errorDetails.photo" alt="Error" class="w-full max-w-md">
-      <div class="w-full max-w-md flex flex-col gap-4 text-lg text-center">
+      <img :src="errorDetails.photo" alt="Error" class="w-full max-w-md" />
+      <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg">
         <h1 class="error-heading">
           {{ errorDetails.type }}
         </h1>
         <p>{{ t(`pages.error.${errorDetails.title}`) }}</p>
         <p>{{ t(`pages.error.${errorDetails.description}`) }}</p>
-        <div class="flex justify-center mt-4">
+        <div class="mt-4 flex justify-center">
           <BaseButton variant="red" @click="handleError">
             {{ t('buttons.backHome') }}
           </BaseButton>
