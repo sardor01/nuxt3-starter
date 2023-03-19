@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test": "vitest --config vitest.config.ts",
     "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "pnpm lint --fix",
     "typecheck": "nuxt typecheck",
@@ -44,6 +45,7 @@
     "rimraf": "^4.4.0",
     "tailwindcss": "^3.2.7",
     "typescript": "^5.0.2",
+    "vitest": "^0.29.3",
     "vue-tsc": "^1.2.0"
   },
   "lint-staged": {
