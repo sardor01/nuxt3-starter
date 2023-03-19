@@ -20,7 +20,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: pnpm lint:fix
+        run: pnpm lint
 
   typecheck:
     runs-on: ubuntu-latest
