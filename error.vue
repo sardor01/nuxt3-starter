@@ -8,6 +8,7 @@ const props = defineProps<{
     stack: string
   }
 }>()
+
 useHead({
   title: props.error.statusMessage,
   link: [
@@ -16,7 +17,9 @@ useHead({
     },
   ],
 })
+
 const { t } = useI18n()
+
 const errorDetails: Record<401 | 403 | 404 | 500, {
   type: string
   title: string
@@ -48,6 +51,7 @@ const errorDetails: Record<401 | 403 | 404 | 500, {
     photo: '/img/errors/500.svg',
   },
 }
+
 const handleError = () => clearError({ redirect: '/' })
 </script>
 
