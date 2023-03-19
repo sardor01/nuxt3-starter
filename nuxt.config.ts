@@ -38,8 +38,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiURL: '',
-      assetURL: '',
+      apiURL: process.env.NUXT_PUBLIC_API_URL,
+      assetURL: process.env.NUXT_PUBLIC_ASSET_URL,
     },
   },
   build: {

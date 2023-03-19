@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.29.1",
+  "packageManager": "pnpm@7.29.3",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "nuxt dev",
@@ -26,7 +26,7 @@
     "yup": "1.0.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.36.0",
+    "@antfu/eslint-config": "^0.37.0",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@nuxtjs/i18n": "8.0.0-beta.9",
