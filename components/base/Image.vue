@@ -9,7 +9,7 @@ const props = withDefaults(
     src: '',
     alt: '',
     type: 'img',
-  }
+  },
 )
 const imgUrl = computed(() => {
   if (props.src) return props.src

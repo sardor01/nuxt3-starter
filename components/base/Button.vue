@@ -19,7 +19,7 @@ const props = withDefaults(
     size: 'md',
     focusTheme: 'dark',
     centered: true,
-  }
+  },
 )
 
 const disableButton = computed(() => {

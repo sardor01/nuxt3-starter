@@ -30,7 +30,7 @@ const props = withDefaults(
     menuClass: '',
     itemsClass: 'p-1',
     itemClass: '',
-  }
+  },
 )
 
 const route = useRoute()
@@ -90,7 +90,7 @@ watch(
   () => route.path,
   () => {
     open.value = false
-  }
+  },
 )
 
 onBeforeMount(() => {

@@ -6,7 +6,7 @@ withDefaults(
   }>(),
   {
     is: 'div',
-  }
+  },
 )
 </script>
 

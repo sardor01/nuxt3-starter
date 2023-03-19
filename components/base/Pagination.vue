@@ -37,7 +37,7 @@ const props = withDefaults(
     firstButtonText: 'First',
     lastButtonText: 'Last',
     hidePrevNext: false,
-  }
+  },
 )
 
 const emit = defineEmits(['input'])
