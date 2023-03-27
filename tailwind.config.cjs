@@ -61,6 +61,9 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      aria: {
+        'current-page': 'current="page"',
+      },
       aspectRatio: {
         square: '1/1',
       },

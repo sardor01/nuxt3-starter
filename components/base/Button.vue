@@ -81,6 +81,7 @@ const btnSize = computed(() => {
     :is="href ? 'a' : 'button'"
     :href="href"
     :type="href ? undefined : type"
+    :disabled="href ? undefined : disableButton"
     class="inline-flex select-none items-center whitespace-nowrap font-semibold transition-colors duration-150 ease-in-out focus:outline-none focus-visible:ring"
     :class="[
       btnVariant,

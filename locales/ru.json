@@ -1,4 +1,10 @@
 {
+  "general": {
+    "noDataFound": "No Data Found"
+  },
+  "menu": {
+    "home": "Home"
+  },
   "buttons": {
     "backHome": "Back Home"
   },

@@ -43,3 +43,7 @@ export const parseJSON = (value: string) => {
     return false
   }
 }
+
+export const getUrl = (arr: string[], index: number) => {
+  return arr.slice(0, index + 1).join('/') === '' ? '/' : arr.slice(0, index + 1).join('/')
+}

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="flex flex-col items-center justify-center py-4 text-lg">
     <div class="mx-auto">
@@ -16,6 +20,8 @@
         </g>
       </svg>
     </div>
-    <p class="mt-2 font-semibold uppercase">No Data Found</p>
+    <p class="mt-2 font-semibold uppercase">
+      {{ t('general.noDataFound') }}
+    </p>
   </div>
 </template>
