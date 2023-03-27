@@ -69,12 +69,12 @@ const handleError = () => clearError({ redirect: '/' })
     >
       <img :src="errorDetails[error.statusCode].photo" alt="Error" class="w-full max-w-md" />
       <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg">
-        <h1 class="error-heading">
+        <h1 class="text-9xl font-bold">
           {{ errorDetails[error.statusCode].type }}
         </h1>
         <p>{{ t(`pages.error.${errorDetails[error.statusCode].title}`) }}</p>
         <p>{{ t(`pages.error.${errorDetails[error.statusCode].description}`) }}</p>
-        <div class="mt-4 flex justify-center">
+        <div class="flex justify-center">
           <BaseButton variant="red" @click="handleError">
             {{ t('buttons.backHome') }}
           </BaseButton>
@@ -83,11 +83,3 @@ const handleError = () => clearError({ redirect: '/' })
     </div>
   </div>
 </template>
-
-<style scoped>
-.error-heading {
-  font-size: 150px;
-  font-weight: 700;
-  line-height: 1;
-}
-</style>

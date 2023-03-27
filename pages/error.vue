@@ -14,13 +14,6 @@ definePageMeta({
 
 useHead({
   title: t(`pages.error.${errorDetails.title}`),
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/nuxt.png',
-    },
-  ],
 })
 
 const handleError = () => clearError({ redirect: '/' })
@@ -35,12 +28,12 @@ const handleError = () => clearError({ redirect: '/' })
     >
       <img :src="errorDetails.photo" alt="Error" class="w-full max-w-md" />
       <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg">
-        <h1 class="error-heading">
+        <h1 class="text-9xl font-bold">
           {{ errorDetails.type }}
         </h1>
         <p>{{ t(`pages.error.${errorDetails.title}`) }}</p>
         <p>{{ t(`pages.error.${errorDetails.description}`) }}</p>
-        <div class="mt-4 flex justify-center">
+        <div class="flex justify-center">
           <BaseButton variant="red" @click="handleError">
             {{ t('buttons.backHome') }}
           </BaseButton>
@@ -49,11 +42,3 @@ const handleError = () => clearError({ redirect: '/' })
     </div>
   </div>
 </template>
-
-<style scoped>
-.error-heading {
-  font-size: 150px;
-  font-weight: 700;
-  line-height: 1;
-}
-</style>
