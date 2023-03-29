@@ -135,7 +135,7 @@ onBeforeMount(() => {
       >
         <div
           class="divide-y overflow-y-auto rounded-lg py-1 shadow-xl"
-          :class="menuClass || 'divide-blue/50 bg-gray-light text-blue'"
+          :class="menuClass || 'divide-blue/50 bg-light text-blue'"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
@@ -152,7 +152,7 @@ onBeforeMount(() => {
                 v-for="(item, i) of subItems"
                 :key="i"
                 role="menuitem"
-                class="mb-1 last:mb-0"
+                class="my-1"
                 :class="itemClass"
                 @click="handleClose"
               >

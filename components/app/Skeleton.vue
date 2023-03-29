@@ -65,7 +65,7 @@ const loaderClass = computed(() =>
     class="relative flex items-center justify-center overflow-hidden"
     :class="[bgClass, loaderClass]"
   >
-    <div class="shimmer absolute top-0 right-0 bottom-0 left-0" :style="shimmerStyle"></div>
+    <div class="shimmer absolute bottom-0 left-0 right-0 top-0" :style="shimmerStyle"></div>
 
     <div v-if="loading" role="status">
       <svg

@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: 'Home',
+})
+</script>
+
 <template>
-  <NuxtWelcome />
+  <NuxtWelcome title="Home" />
 </template>

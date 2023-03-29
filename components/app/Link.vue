@@ -9,7 +9,7 @@ export default {
 import type { RouteLocation, RouteLocationRaw } from 'vue-router'
 defineProps<{
   to: RouteLocationRaw
-  focusTheme?: 'light' | 'dark'
+  theme?: 'light' | 'dark'
   centered?: boolean
 }>()
 const localePath = useLocalePath()
@@ -25,7 +25,7 @@ const localePath = useLocalePath()
       v-bind="$attrs"
       variant="none"
       size="none"
-      :focus-theme="focusTheme"
+      :theme="theme"
       :centered="centered"
       :href="slotHref"
       :aria-current="isExactActive ? 'page' : undefined"

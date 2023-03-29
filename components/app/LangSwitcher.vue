@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const { locale: currentLocale, locales, setLocale } = useI18n()
 
-const selectedLocale = ref(currentLocale.value)
-
-watch(selectedLocale, (value) => {
-  setLocale(value)
-})
+const changeLocale = (item: (typeof locales.value)[number]) => {
+  if (typeof item === 'string') {
+    setLocale(item)
+  } else {
+    setLocale(item.code)
+  }
+}
 </script>
 
 <template>
@@ -14,24 +16,24 @@ watch(selectedLocale, (value) => {
     strategy="absolute"
     placement="bottom"
     class="inline-flex"
-    trigger-class="rounded-md"
+    trigger-class="rounded-md py-2 px-3 bg-light"
     items-class="py-1 px-2"
   >
     <template #trigger>
-      <span class="flex items-center rounded-md py-1 px-2 capitalize">
-        <span class="ml-0.5 mr-1.5 font-semibold text-red">
+      <span class="flex items-center rounded-md uppercase text-blue">
+        <span class="ml-0.5 mr-1.5 font-semibold">
           {{ currentLocale }}
         </span>
-        <FontAwesomeIcon icon="fa-solid fa-chevron-down" class="fa-xs text-gray-dark" />
+        <FontAwesomeIcon icon="fa-solid fa-chevron-down" size="xs" class="mb-[3px]" />
       </span>
     </template>
     <template #item="{ item }: { item: (typeof locales.value)[number] }">
       <BaseButton
         variant="none"
         size="none"
-        class="min-w-[100px] rounded-md py-1 px-2"
+        class="min-w-[100px] rounded-md px-2 py-1"
         :centered="false"
-        @click="typeof item === 'string' ? (selectedLocale = item) : (selectedLocale = item.code)"
+        @click="changeLocale(item)"
       >
         {{ typeof item === 'string' ? item : item.name }}
       </BaseButton>

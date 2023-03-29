@@ -1,24 +1,12 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   error: {
     url: string
     statusCode: 401 | 403 | 404 | 500
     statusMessage: string
-    message: string
     stack: string
   }
 }>()
-
-useHead({
-  title: props.error.statusMessage,
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/nuxt.png',
-    },
-  ],
-})
 
 const { t } = useI18n()
 
@@ -64,11 +52,15 @@ const handleError = () => clearError({ redirect: '/' })
   <div
     class="flex min-h-screen w-full items-center justify-center bg-white md:px-24 md:py-20 xl:px-40 xl:py-20"
   >
+    <Head>
+      <Title>{{ error.statusCode }}</Title>
+      <Meta name="description" :content="error.statusMessage" />
+    </Head>
     <div
-      class="flex h-full w-full flex-row flex-wrap items-center justify-center gap-8 rounded-lg py-4 px-10"
+      class="flex h-full w-full flex-row flex-wrap items-center justify-center gap-8 rounded-lg px-10 py-4"
     >
       <img :src="errorDetails[error.statusCode].photo" alt="Error" class="w-full max-w-md" />
-      <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg">
+      <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg font-medium">
         <h1 class="text-9xl font-bold">
           {{ errorDetails[error.statusCode].type }}
         </h1>

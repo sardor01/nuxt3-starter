@@ -65,7 +65,7 @@ const heroRoutes = computed<Link[]>(() => {
 
     <BaseContainer class="relative z-[3] w-full text-white">
       <span
-        class="block text-3xl font-semibold uppercase !leading-snug line-clamp-2 sm:text-4xl lg:text-5xl"
+        class="line-clamp-2 block text-3xl font-semibold uppercase !leading-snug sm:text-4xl lg:text-5xl"
       >
         {{ dynamic ? title : t(title) }}
       </span>

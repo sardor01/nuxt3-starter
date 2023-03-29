@@ -7,7 +7,6 @@
 </template>
 
 <style>
-/* list */
 .admin-content ul,
 .admin-content ol {
   list-style-type: none;
@@ -41,7 +40,6 @@
   background-color: #133654;
 }
 
-/* image */
 .admin-content img {
   width: auto !important;
   height: auto !important;

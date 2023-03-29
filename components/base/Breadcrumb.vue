@@ -8,7 +8,7 @@ const { t } = useI18n()
 <template>
   <nav class="flex" aria-label="breadcrumb">
     <ul
-      class="inline-flex flex-nowrap items-center gap-x-2.5 overflow-x-auto whitespace-nowrap py-2 px-1"
+      class="inline-flex flex-nowrap items-center gap-x-2.5 overflow-x-auto whitespace-nowrap px-1 py-2"
     >
       <li
         v-for="(item, index) in items"
@@ -19,7 +19,7 @@ const { t } = useI18n()
         <AppLink
           :to="item.to"
           :centered="false"
-          focus-theme="light"
+          theme="light"
           class="aria-current-page:pointer-events-none"
         >
           {{ item.dynamic ? item.title : t(item.title) }}

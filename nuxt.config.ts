@@ -1,5 +1,17 @@
 export default defineNuxtConfig({
-  css: ['@fortawesome/fontawesome-svg-core/styles.css', '~/assets/css/tailwind.css'],
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      titleTemplate: '%s - Nuxt3 Starter',
+      link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
+    },
+  },
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    '~/assets/fonts/montserrat.css',
+    '~/assets/css/tailwind.css',
+  ],
   modules: [
     [
       '@nuxtjs/i18n',
