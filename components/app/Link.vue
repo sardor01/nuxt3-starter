@@ -5,8 +5,9 @@ export default {
 </script>
 
 <script setup lang="ts">
-// eslint-disable-next-line import/first, @typescript-eslint/consistent-type-imports
+// eslint-disable-next-line import/first
 import type { RouteLocation, RouteLocationRaw } from 'vue-router'
+
 defineProps<{
   to: RouteLocationRaw
   theme?: 'light' | 'dark'

@@ -1,3 +1,5 @@
+import { defaultLocale, locales } from './config'
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -22,15 +24,12 @@ export default defineNuxtConfig({
           useCookie: true,
           alwaysRedirect: true,
         },
-        locales: [
-          { code: 'en', name: 'English', file: 'en.json' },
-          { code: 'ru', name: 'Русский', file: 'ru.json' },
-        ],
+        locales,
         lazy: true,
         langDir: 'locales',
-        defaultLocale: 'en',
+        defaultLocale,
         vueI18n: {
-          fallbackLocale: 'en',
+          fallbackLocale: defaultLocale,
         },
       },
     ],
