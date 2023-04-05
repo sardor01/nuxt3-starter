@@ -17,7 +17,7 @@ const formSchema = object({
     .min(4, 'Password must be at least 4 characters'),
 })
 
-const { handleSubmit } = useForm<Partial<InferType<typeof formSchema>>>({
+const { handleSubmit } = useForm<InferType<typeof formSchema>>({
   validationSchema: formSchema,
 })
 
