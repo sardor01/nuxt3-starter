@@ -47,8 +47,3 @@ export const parseJSON = (value: string) => {
 export const getUrl = (arr: string[], index: number) => {
   return arr.slice(0, index + 1).join('/') === '' ? '/' : arr.slice(0, index + 1).join('/')
 }
-
-export const uid = (prefix = '') => {
-  const id = Date.now().toString(36) + Math.random().toString(36).substring(2)
-  return prefix ? `${prefix}-${id}` : id
-}
