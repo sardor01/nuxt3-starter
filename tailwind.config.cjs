@@ -54,6 +54,20 @@ module.exports = {
       aria: {
         'current-page': 'current="page"',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-bullets': '#0284c7',
+            maxWidth: '100%',
+            'ul > li': {
+              'padding-left': 0,
+              '&:first-child, &:last-child': {
+                'margin-block': 0,
+              },
+            },
+          },
+        },
+      },
       zIndex: {
         overlay: '999',
         modal: '1000',
