@@ -19,15 +19,15 @@ export default defineNuxtConfig({
       '@nuxtjs/i18n',
       {
         legacy: false,
-        stategy: 'prefix_except_default',
+        strategy: 'prefix_except_default',
         detectBrowserLanguage: {
           useCookie: true,
           alwaysRedirect: true,
         },
         locales,
+        defaultLocale,
         lazy: true,
         langDir: 'locales',
-        defaultLocale,
         vueI18n: {
           fallbackLocale: defaultLocale,
         },
