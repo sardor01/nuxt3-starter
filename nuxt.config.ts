@@ -5,16 +5,18 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      titleTemplate: '%s - Nuxt3 Starter',
+      title: 'Nuxt3 Starter',
       link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
     },
   },
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/fonts/montserrat.css',
+    '~/assets/fonts/roboto.css',
     '~/assets/css/tailwind.css',
   ],
   modules: [
+    ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
     [
       '@nuxtjs/i18n',
       {
@@ -40,6 +42,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  routeRules: {
+    '/admin/**': { ssr: false },
+    '/auth/**': { ssr: false },
+  },
   runtimeConfig: {
     public: {
       apiURL: process.env.NUXT_PUBLIC_API_URL,
@@ -54,5 +60,14 @@ export default defineNuxtConfig({
       '@fortawesome/free-regular-svg-icons',
       '@fortawesome/free-solid-svg-icons',
     ],
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
   },
 })
