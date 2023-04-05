@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# remove the following line if you have CI set up
-# pnpm build && pnpm cleanup

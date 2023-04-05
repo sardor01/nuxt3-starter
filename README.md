@@ -15,7 +15,7 @@
 
 ## IDE
 
-We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (You might want to disable Vetur if you have it).
+It is recommended to use [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (disable Vetur).
 
 ## Nuxt 3 Links
 
@@ -26,3 +26,4 @@ We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https:
 - [Testing](https://nuxt.com/docs/getting-started/testing)
 - [Seo and Meta](https://nuxt.com/docs/getting-started/seo-meta)
 - [Environment Variables](https://nuxt.com/docs/getting-started/configuration#environment-variables-and-private-tokens)
+- [Route Rules](https://nuxt.com/docs/guide/concepts/rendering#route-rules)

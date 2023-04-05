@@ -1,8 +1,10 @@
 {
   "prettier.enable": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+    "source.fixAll": false
   },
   "files.associations": {
     "*.css": "postcss"

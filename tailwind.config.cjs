@@ -43,9 +43,6 @@ module.exports = {
       green: '#04d65c',
       yellow: '#ffb131',
     },
-    fontFamily: {
-      sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-    },
     screens: {
       xs: '475px',
       ...defaultTheme.screens,
@@ -53,6 +50,9 @@ module.exports = {
     extend: {
       aria: {
         'current-page': 'current="page"',
+      },
+      fontFamily: {
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {

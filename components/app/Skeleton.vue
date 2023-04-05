@@ -26,9 +26,6 @@ const hexToRgb = (hex: string) => `${hex.match(/\w\w/g)?.map((x) => +`0x${x}`)}`
 </script>
 
 <script setup lang="ts">
-// eslint-disable-next-line import/first
-import { computed, toRefs } from 'vue'
-
 const props = withDefaults(
   defineProps<{
     type?: LoaderTypesValues
