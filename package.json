@@ -9,14 +9,15 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck",
-    "upgrade:force": "nuxt upgrade --force",
+    "cleanup": "nuxt cleanup",
+    "upgrade": "nuxt upgrade --force",
     "test": "vitest --config vitest.config.ts",
     "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "lf": "pnpm lint:fix && pnpm format:fix",
-    "cleanup": "nuxt cleanup && rimraf node_modules && pnpm install",
+    "cleanup:full": "pnpm cleanup && rimraf node_modules && pnpm install",
     "prepare": "husky install"
   },
   "dependencies": {

@@ -15,6 +15,17 @@ export default defineNuxtConfig({
     '~/assets/fonts/roboto.css',
     '~/assets/css/tailwind.css',
   ],
+  components: [
+    {
+      path: '~/components',
+      extensions: ['.vue'],
+    },
+    {
+      path: '~/components/icons',
+      extensions: ['.vue'],
+      prefix: '',
+    },
+  ],
   modules: [
     ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
     [
@@ -30,6 +41,10 @@ export default defineNuxtConfig({
         defaultLocale,
         lazy: true,
         langDir: 'locales',
+        customRoutes: 'config',
+        pages: {
+          admin: false,
+        },
         vueI18n: {
           fallbackLocale: defaultLocale,
         },
@@ -44,7 +59,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/admin/**': { ssr: false },
-    '/auth/**': { ssr: false },
   },
   runtimeConfig: {
     public: {

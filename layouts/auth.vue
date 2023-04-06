@@ -3,8 +3,3 @@
     <slot />
   </main>
 </template>
-
-<style lang="less">
-@import 'ant-design-vue/dist/antd.less';
-@import 'assets/css/custom.less';
-</style>

@@ -1,28 +1,20 @@
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
-import { type InferType, object, string } from 'yup'
-import { useAuthStore } from '~/stores/auth'
+import { type LoginPayload, useAdminAuthStore, validationSchema } from '~/stores/adminAuth'
 
 definePageMeta({
   layout: 'auth',
-  title: { value: 'Login', dynamic: true },
 })
 
-const auth = useAuthStore()
+const router = useRouter()
+const adminAuthStore = useAdminAuthStore()
 
-const formSchema = object({
-  name: string().required('Name is required'),
-  password: string()
-    .required('Password is required')
-    .min(4, 'Password must be at least 4 characters'),
-})
-
-const { handleSubmit } = useForm<InferType<typeof formSchema>>({
-  validationSchema: formSchema,
-})
+const { handleSubmit } = useForm<LoginPayload>({ validationSchema })
 
 const onSubmit = handleSubmit(async (values) => {
-  await auth.login(values)
+  await adminAuthStore.login(values, () => {
+    router.push('/admin')
+  })
 })
 </script>
 
@@ -37,7 +29,7 @@ const onSubmit = handleSubmit(async (values) => {
         html-type="submit"
         size="large"
         class="mt-2 w-full"
-        :loading="auth.isLoading"
+        :loading="adminAuthStore.isLoading"
       >
         Login
       </AButton>
