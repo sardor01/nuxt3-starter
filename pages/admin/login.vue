@@ -3,7 +3,7 @@ import { useForm } from 'vee-validate'
 import { type LoginPayload, useAdminAuthStore, validationSchema } from '~/stores/adminAuth'
 
 definePageMeta({
-  layout: 'auth',
+  layout: 'admin-auth',
 })
 
 const router = useRouter()

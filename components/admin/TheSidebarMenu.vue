@@ -19,7 +19,7 @@ const selectedKeys = ref<string[]>([])
         :style="{ order: `${index + 1}` }"
       >
         <template #title>
-          <FontAwesomeIcon :icon="menuItem.icon" size="lg" />
+          <FontAwesomeIcon :icon="menuItem.icon" />
           <span class="ml-3 capitalize">{{ menuItem.label }}</span>
         </template>
         <AMenuItem v-for="sub in menuItem.subs" :key="sub.id" class="!my-0 first:!mt-1 last:!mb-1">
@@ -28,12 +28,12 @@ const selectedKeys = ref<string[]>([])
       </ASubMenu>
       <AMenuItem v-if="!menuItem.subs" :key="menuItem.id" :style="{ order: `${index + 1}` }">
         <RouterLink v-if="!menuItem.newWindow" :to="menuItem.to || '/'">
-          <FontAwesomeIcon :icon="menuItem.icon" size="lg" />
+          <FontAwesomeIcon :icon="menuItem.icon" />
           <span class="ml-3 capitalize">{{ menuItem.label }}</span>
         </RouterLink>
 
         <a v-else :href="menuItem.to" target="_blank">
-          <FontAwesomeIcon :icon="menuItem.icon" size="lg" />
+          <FontAwesomeIcon :icon="menuItem.icon" />
           <span class="ml-3 capitalize">{{ menuItem.label }}</span>
         </a>
       </AMenuItem>

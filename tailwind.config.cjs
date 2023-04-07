@@ -54,6 +54,9 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
+      lineHeight: {
+        'extra-normal': '1.5715',
+      },
       typography: {
         DEFAULT: {
           css: {

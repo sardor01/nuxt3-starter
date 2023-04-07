@@ -21,7 +21,7 @@ const title = computed(() => {
 </script>
 
 <template>
-  <Html :lang="head.htmlAttrs?.lang">
+  <Html :lang="head.htmlAttrs?.lang" class="leading-extra-normal">
     <Head>
       <Title>{{ title && (title.dynamic ? title.value : t(title.value)) }}</Title>
       <template v-for="link in head.link" :key="link.id">

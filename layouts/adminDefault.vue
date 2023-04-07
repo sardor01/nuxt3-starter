@@ -68,14 +68,12 @@ const onBreakPoint = (closed: boolean) => {
           <MenuFoldIcon v-if="showDrawer ? drawerVisible : !collapsed" class="h-5 w-5" />
           <MenuUnfoldIcon v-else class="h-5 w-5" />
         </AButton>
-        <div class="flex items-center">
-          <AButton type="primary">Logout</AButton>
-        </div>
+        <AButton type="primary">Logout</AButton>
       </ALayoutHeader>
       <ALayoutContent>
-        <main class="main-layout-content-wrap">
+        <BaseContainer is="main" class="py-6">
           <RouterView />
-        </main>
+        </BaseContainer>
       </ALayoutContent>
     </ALayout>
   </ALayout>
