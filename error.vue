@@ -4,10 +4,12 @@ defineProps<{
     url: string
     statusCode: 401 | 403 | 404 | 500
     statusMessage: string
+    message: string
     stack: string
   }
 }>()
 
+const route = useRoute()
 const { t } = useI18n()
 
 const errorDetails: Record<
@@ -45,7 +47,8 @@ const errorDetails: Record<
   },
 }
 
-const handleError = () => clearError({ redirect: '/' })
+const isAdmin = computed(() => route.path.includes('/admin'))
+const handleError = () => clearError({ redirect: isAdmin.value ? '/admin' : '/' })
 </script>
 
 <template>
@@ -60,13 +63,15 @@ const handleError = () => clearError({ redirect: '/' })
       class="flex h-full w-full flex-row flex-wrap items-center justify-center gap-8 rounded-lg px-10 py-4"
     >
       <img :src="errorDetails[error.statusCode].photo" alt="Error" class="w-full max-w-md" />
-      <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg font-medium">
-        <h1 class="text-9xl font-bold">
+      <div class="flex w-full max-w-md flex-col gap-4 text-center text-lg">
+        <span class="block text-9xl font-bold">
           {{ errorDetails[error.statusCode].type }}
-        </h1>
-        <p>{{ t(`pages.error.${errorDetails[error.statusCode].title}`) }}</p>
-        <p>{{ t(`pages.error.${errorDetails[error.statusCode].description}`) }}</p>
-        <div class="flex justify-center">
+        </span>
+        <span class="block">{{ t(`pages.error.${errorDetails[error.statusCode].title}`) }}</span>
+        <span class="block">
+          {{ t(`pages.error.${errorDetails[error.statusCode].description}`) }}
+        </span>
+        <div class="mt-2 flex justify-center">
           <BaseButton variant="red" @click="handleError">
             {{ t('buttons.backHome') }}
           </BaseButton>

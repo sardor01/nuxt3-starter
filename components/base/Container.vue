@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    is?: 'div' | 'section'
+    is?: 'div' | 'main' | 'section'
     screen?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | ''
   }>(),
   {

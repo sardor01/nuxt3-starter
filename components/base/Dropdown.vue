@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
 import {
   type Placement,
   type Instance as PopperInstance,
@@ -104,7 +103,7 @@ onBeforeMount(() => {
 <template>
   <div
     ref="dropdown"
-    class="relative inline-flex cursor-pointer items-center justify-center"
+    class="relative inline-flex h-auto cursor-pointer items-center justify-center leading-extra-normal"
     @keydown.esc="handleClose"
     @mouseover="mode === 'hover' ? handleOpen() : () => {}"
     @mouseleave="mode === 'hover' ? handleClose() : () => {}"
@@ -135,7 +134,7 @@ onBeforeMount(() => {
       >
         <div
           class="divide-y overflow-y-auto rounded-lg py-1 shadow-xl"
-          :class="menuClass || 'divide-blue/50 bg-light text-blue'"
+          :class="menuClass || 'divide-blue/50 bg-light text-dark'"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
@@ -145,14 +144,13 @@ onBeforeMount(() => {
             <ul
               v-for="(subItems, index) of items"
               :key="index"
-              class="max-h-[450px] overflow-y-auto"
+              class="my-0 max-h-[450px] overflow-y-auto"
               :class="itemsClass"
             >
               <li
                 v-for="(item, i) of subItems"
                 :key="i"
                 role="menuitem"
-                class="my-1"
                 :class="itemClass"
                 @click="handleClose"
               >

@@ -5,14 +5,25 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      titleTemplate: '%s - Nuxt3 Starter',
+      title: 'Nuxt3 Starter',
       link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
     },
   },
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/fonts/montserrat.css',
+    '~/assets/fonts/roboto.css',
     '~/assets/css/tailwind.css',
+  ],
+  components: [
+    {
+      path: '~/components',
+      extensions: ['.vue'],
+    },
+    {
+      path: '~/components/icons',
+      extensions: ['.vue'],
+      prefix: '',
+    },
   ],
   modules: [
     [
@@ -28,17 +39,27 @@ export default defineNuxtConfig({
         defaultLocale,
         lazy: true,
         langDir: 'locales',
+        customRoutes: 'config',
+        pages: {
+          admin: false,
+        },
         vueI18n: {
           fallbackLocale: defaultLocale,
         },
       },
     ],
+    ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
+    '@vee-validate/nuxt',
+    '@vueuse/nuxt',
   ],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  routeRules: {
+    '/admin/**': { ssr: false },
   },
   runtimeConfig: {
     public: {
@@ -54,5 +75,14 @@ export default defineNuxtConfig({
       '@fortawesome/free-regular-svg-icons',
       '@fortawesome/free-solid-svg-icons',
     ],
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
   },
 })
