@@ -1,21 +1,14 @@
-# Opinionated [Nuxt 3](https://nuxt.com/docs/guide) Starter
+# Opinionated [Nuxt 3](https://nuxt.com/docs) Starter
 
-## Features
+## TODO
 
-- [x] - pnpm
-- [x] - TypeScript
-- [x] - [Eslint](https://github.com/antfu/eslint-config)
-- [x] - [Tailwindcss](https://tailwindcss.com/docs)
-- [x] - [Nuxt/I18n](https://v8.i18n.nuxtjs.org)
-- [x] - Icons - https://fontawesome.com/search?o=r&m=free
-- [ ] - Base components: Button, Input, Select, Checkbox, Radio, Modal, Dropdown, Alert, Toast, Tabs, Accordion, Card, Table, Pagination, Progress, Spinner, Tooltip, Popover, Carousel, etc.
-- [ ] - Form validation via [Vee-Validate](https://vee-validate.logaretm.com/v4) and [Yup](https://github.com/jquense/yup)
+- [ ] - Base components
 - [ ] - Unit testing with [vitest and @nuxt/test-utils](https://nuxt.com/docs/getting-started/testing)
-- [ ] - E2E testing with Cypress or Playwright
+- [ ] - E2E testing with [Cypress](https://cypress.io) or [Playwright](https://playwright.dev)
 
 ## IDE
 
-It is recommended to use [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (disable Vetur).
+Recommended using [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (remove Vetur).
 
 ## Nuxt 3 Links
 
@@ -27,3 +20,7 @@ It is recommended to use [VS Code](https://code.visualstudio.com) with [Volar](h
 - [Seo and Meta](https://nuxt.com/docs/getting-started/seo-meta)
 - [Environment Variables](https://nuxt.com/docs/getting-started/configuration#environment-variables-and-private-tokens)
 - [Route Rules](https://nuxt.com/docs/guide/concepts/rendering#route-rules)
+- [Fontawesome](https://fontawesome.com/search?o=r&m=free)
+- [Eslint Config](https://github.com/antfu/eslint-config)
+- [Tailwindcss](https://tailwindcss.com/docs)
+- [Nuxt/I18n](https://v8.i18n.nuxtjs.org)
