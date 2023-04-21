@@ -57,10 +57,10 @@ module.exports = {
       lineHeight: {
         'extra-normal': '1.5715',
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
-            '--tw-prose-bullets': '#0284c7',
+            '--tw-prose-bullets': theme('colors.blue'),
             maxWidth: '100%',
             'ul > li': {
               'padding-left': 0,
@@ -70,7 +70,7 @@ module.exports = {
             },
           },
         },
-      },
+      }),
       zIndex: {
         overlay: '999',
         modal: '1000',

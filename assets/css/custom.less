@@ -1,98 +1,9 @@
 @font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
   'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
   'Noto Color Emoji';
-@font-size-base: 16px;
-@font-size-lg: @font-size-base;
-@font-size-sm: @font-size-base - 2px;
-@height-base: 36px;
-@height-lg: 44px;
-@height-sm: 28px;
 @form-vertical-label-padding: 0;
-@form-item-label-font-size: @font-size-sm;
 
-// form
-.ant-form-item-explain,
-.ant-form-item-extra {
-  font-size: @font-size-sm;
-  padding-top: 1px;
-}
-
-.ant-form-item-with-help:last-of-type {
-  padding-bottom: 0.75rem;
-}
-
-.ant-input {
-  border-radius: 0;
-}
-
-.ant-select-clear {
-  margin-top: 0;
-  transform: translateY(-50%);
-
-  .anticon {
-    vertical-align: 0;
-  }
-}
-
-.ant-select-item-option-state {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ant-select-multiple {
-  .ant-select-selection-item {
-    margin-inline-end: 6px;
-    padding-inline-start: 6px;
-    padding-inline-end: 6px;
-  }
-
-  .ant-select-selection-item-content {
-    margin-right: 6px;
-  }
-
-  .ant-select-selection-item-remove {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    vertical-align: 0;
-
-    > .anticon {
-      vertical-align: 0;
-    }
-  }
-}
-
-.ant-upload {
-  display: inline-block;
-
-  &-list-item {
-    font-size: @font-size-sm;
-  }
-
-  &-list-text-container,
-  &-list-picture-container {
-    display: block !important;
-  }
-
-  &-list-picture &-list-item-thumbnail,
-  &-list-picture-card &-list-item-thumbnail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      object-fit: cover;
-    }
-  }
-
-  &-list-text &-list-item-name,
-  &-list-picture &-list-item-name {
-    padding: 0 12px 0 8px;
-  }
-}
-
-// layout
+//#region layout
 .ant-layout-sider {
   &,
   .ant-menu,
@@ -109,33 +20,4 @@
 .ant-drawer-body {
   padding: 0;
 }
-
-// button
-.ant-btn {
-  &,
-  > .ant-btn-loading-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: none;
-  }
-
-  .anticon {
-    margin-inline: 0 !important;
-    transition: none;
-  }
-}
-
-a.ant-btn {
-  padding-top: 4.4px !important;
-  line-height: 1.5715;
-}
-
-.ant-pagination {
-  &-prev &-item-link,
-  &-next &-item-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
+//#endregion

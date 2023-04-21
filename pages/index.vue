@@ -53,7 +53,7 @@ const features = [
               <div
                 class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue"
               >
-                <FontAwesomeIcon :icon="feature.icon" class="h-6 w-6 text-white" />
+                <FontAwesomeIcon :icon="feature.icon" size="lg" class="text-white" />
               </div>
               {{ feature.name }}
             </dt>
