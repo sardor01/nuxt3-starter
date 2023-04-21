@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { useAdminAuthStore } from '~/stores/adminAuth'
+
 const drawerVisible = ref(false)
 const showDrawer = ref(false)
 const collapsed = ref(false)
 const layoutSiderWidth = ref(270)
 const drawerWidth = ref(270)
+
+const router = useRouter()
+const { t } = useI18n()
+const adminAuthStore = useAdminAuthStore()
 
 const handleTrigger = () => {
   if (showDrawer.value) {
@@ -29,6 +35,12 @@ const onBreakPoint = (closed: boolean) => {
     drawerWidth.value = 0
   }
 }
+
+const handleLogout = () => {
+  adminAuthStore.logout(() => {
+    router.push('/admin/login')
+  })
+}
 </script>
 
 <template>
@@ -40,7 +52,7 @@ const onBreakPoint = (closed: boolean) => {
       :closable="false"
       placement="left"
     >
-      <AdminTheSidebarMenu v-if="showDrawer" />
+      <AdminSidebarMenu v-if="showDrawer" />
     </ADrawer>
     <ALayoutSider
       :collapsed="collapsed"
@@ -49,11 +61,11 @@ const onBreakPoint = (closed: boolean) => {
       :trigger="null"
       collapsible
       theme="dark"
-      class="d z-[500] min-h-screen overflow-y-auto"
+      class="!sticky top-0 z-[500] h-screen overflow-y-auto"
       breakpoint="lg"
       @breakpoint="onBreakPoint"
     >
-      <AdminTheSidebarMenu v-if="!showDrawer" />
+      <AdminSidebarMenu v-if="!showDrawer" />
     </ALayoutSider>
 
     <ALayout class="min-h-screen" :class="{ active: !collapsed }">
@@ -68,11 +80,13 @@ const onBreakPoint = (closed: boolean) => {
           <MenuFoldIcon v-if="showDrawer ? drawerVisible : !collapsed" class="h-5 w-5" />
           <MenuUnfoldIcon v-else class="h-5 w-5" />
         </AButton>
-        <AButton type="primary">Logout</AButton>
+        <AButton type="primary" @click="handleLogout">
+          {{ t('buttons.logout') }}
+        </AButton>
       </ALayoutHeader>
       <ALayoutContent>
         <BaseContainer is="main" class="py-6">
-          <RouterView />
+          <slot />
         </BaseContainer>
       </ALayoutContent>
     </ALayout>

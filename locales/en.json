@@ -6,7 +6,9 @@
     "home": "Home"
   },
   "buttons": {
-    "backHome": "Back Home"
+    "backHome": "Back Home",
+    "login": "Login",
+    "logout": "Logout"
   },
   "pages": {
     "error": {

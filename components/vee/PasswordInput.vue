@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useField } from 'vee-validate'
-
 const props = withDefaults(
   defineProps<{
     id: string

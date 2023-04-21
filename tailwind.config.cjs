@@ -52,7 +52,7 @@ module.exports = {
         'current-page': 'current="page"',
       },
       fontFamily: {
-        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       lineHeight: {
         'extra-normal': '1.5715',

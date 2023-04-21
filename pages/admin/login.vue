@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
-import { type LoginPayload, useAdminAuthStore, validationSchema } from '~/stores/adminAuth'
+import { formSchema, useAdminAuthStore } from '~/stores/adminAuth'
 
 definePageMeta({
   layout: 'admin-auth',
@@ -9,7 +8,7 @@ definePageMeta({
 const router = useRouter()
 const adminAuthStore = useAdminAuthStore()
 
-const { handleSubmit } = useForm<LoginPayload>({ validationSchema })
+const { handleSubmit } = useForm({ validationSchema: toTypedSchema(formSchema) })
 
 const onSubmit = handleSubmit(async (values) => {
   await adminAuthStore.login(values, () => {

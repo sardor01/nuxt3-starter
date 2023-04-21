@@ -11,7 +11,6 @@ export default defineNuxtConfig({
   },
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/fonts/montserrat.css',
     '~/assets/fonts/roboto.css',
     '~/assets/css/tailwind.css',
   ],
@@ -27,7 +26,6 @@ export default defineNuxtConfig({
     },
   ],
   modules: [
-    ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
     [
       '@nuxtjs/i18n',
       {
@@ -50,6 +48,9 @@ export default defineNuxtConfig({
         },
       },
     ],
+    ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
+    '@vee-validate/nuxt',
+    '@vueuse/nuxt',
   ],
   postcss: {
     plugins: {

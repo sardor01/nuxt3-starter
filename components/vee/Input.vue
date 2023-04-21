@@ -5,9 +5,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-/* eslint-disable import/first */
-import { useField } from 'vee-validate'
-
 const props = withDefaults(
   defineProps<{
     id: string
