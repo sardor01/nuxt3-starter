@@ -8,7 +8,7 @@
 
 ## IDE
 
-Recommended using [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (remove Vetur).
+Recommend using [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (remove Vetur).
 
 ## Nuxt 3 Links
 
@@ -23,4 +23,4 @@ Recommended using [VS Code](https://code.visualstudio.com) with [Volar](https://
 - [Fontawesome](https://fontawesome.com/search?o=r&m=free)
 - [Eslint Config](https://github.com/antfu/eslint-config)
 - [Tailwindcss](https://tailwindcss.com/docs)
-- [Nuxt/I18n](https://v8.i18n.nuxtjs.org)
+- [Nuxt/i18n](https://v8.i18n.nuxtjs.org)
