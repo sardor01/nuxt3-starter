@@ -2,7 +2,9 @@
 import { formSchema, useAdminAuthStore } from '~/stores/adminAuth'
 
 definePageMeta({
-  layout: 'admin-auth',
+  layout: 'admin-default',
+  middleware: 'admin-auth',
+  isGuest: true,
 })
 
 const router = useRouter()

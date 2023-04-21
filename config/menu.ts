@@ -17,13 +17,13 @@ const menu: Menu[] = [
   {
     id: 'sliders',
     label: 'sliders',
-    icon: 'fa-solid fa-calendar-alt',
+    icon: 'fa-solid fa-list',
     to: '/admin/sliders',
   },
   {
     id: 'events',
     label: 'events',
-    icon: 'fa-solid fa-calendar-alt',
+    icon: 'fa-solid fa-list',
     subs: [
       {
         id: 'conferences',
@@ -45,25 +45,25 @@ const menu: Menu[] = [
   {
     id: 'useful-links',
     label: 'usefulLinks',
-    icon: 'fa-solid fa-calendar-alt',
+    icon: 'fa-solid fa-list',
     to: '/admin/useful-links',
   },
   {
     id: 'participants',
     label: 'participants',
-    icon: 'fa-solid fa-calendar-alt',
+    icon: 'fa-solid fa-list',
     to: '/admin/participants',
   },
   {
     id: 'pages',
     label: 'pages',
-    icon: 'fa-solid fa-calendar-alt',
+    icon: 'fa-solid fa-list',
     to: '/admin/pages',
   },
   {
     id: 'options',
     label: 'options',
-    icon: 'fa-solid fa-calendar-alt',
+    icon: 'fa-solid fa-list',
     to: '/admin/options',
   },
 ]

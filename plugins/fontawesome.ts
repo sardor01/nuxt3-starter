@@ -2,10 +2,10 @@ import { config, library } from '@fortawesome/fontawesome-svg-core'
 import {
   faAnglesLeft,
   faAnglesRight,
-  faCalendarAlt,
   faChevronDown,
   faDownload,
   faFingerprint,
+  faList,
   faLock,
   faRotate,
   faSpinner,
@@ -16,10 +16,10 @@ export default defineNuxtPlugin(() => {
   library.add(
     faAnglesLeft,
     faAnglesRight,
-    faCalendarAlt,
     faChevronDown,
     faDownload,
     faFingerprint,
+    faList,
     faLock,
     faRotate,
     faSpinner,
