@@ -12,6 +12,7 @@
     "typecheck": "nuxt typecheck",
     "cleanup": "nuxt cleanup && pnpm postinstall",
     "upgrade:nuxt": "nuxt upgrade --force",
+    "test": "vitest --config vitest.config.ts",
     "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier --check .",
