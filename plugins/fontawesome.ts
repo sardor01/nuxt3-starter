@@ -9,6 +9,7 @@ import {
   faLock,
   faRotate,
   faSpinner,
+  faUpload,
 } from '@fortawesome/free-solid-svg-icons'
 
 export default defineNuxtPlugin(() => {
@@ -23,5 +24,6 @@ export default defineNuxtPlugin(() => {
     faLock,
     faRotate,
     faSpinner,
+    faUpload,
   )
 })

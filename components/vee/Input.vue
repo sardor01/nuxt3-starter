@@ -28,9 +28,9 @@ const { uid } = useUid(props.id)
 
 <template>
   <AFormItem
-    :label="label as any"
+    :label="label"
     :html-for="uid"
-    :help="errorMessage as any"
+    :help="errorMessage"
     :validate-status="errorMessage ? 'error' : ''"
     :rules="{ required }"
     :label-col="{ span: 24 }"

@@ -44,6 +44,19 @@ export const parseJSON = (value: string) => {
   }
 }
 
+export const getUid = (prefix = '') => {
+  const id = Date.now().toString(36) + Math.random().toString(36).substring(2)
+  return prefix ? `${prefix}-${id}` : id
+}
+
+export const getFileName = (path: string) => {
+  return path.replace(/^.*[\\\/]/, '')
+}
+
 export const getUrl = (arr: string[], index: number) => {
   return arr.slice(0, index + 1).join('/') === '' ? '/' : arr.slice(0, index + 1).join('/')
+}
+
+export const hyphenToCamelCase = (str: string) => {
+  return str.replace(/-./g, (m) => m[1].toUpperCase())
 }
