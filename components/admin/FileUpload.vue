@@ -17,6 +17,7 @@ const props = withDefaults(
     maxCount: 8,
   },
 )
+
 const emit = defineEmits(['change'])
 
 const config = useRuntimeConfig()

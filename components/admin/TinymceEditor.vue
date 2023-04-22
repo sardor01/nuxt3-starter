@@ -9,6 +9,7 @@ const props = withDefaults(
   }>(),
   { cloudChannel: '5' },
 )
+
 const emit = defineEmits(['update:value'])
 
 const config = useRuntimeConfig()

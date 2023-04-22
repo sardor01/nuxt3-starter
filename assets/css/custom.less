@@ -3,6 +3,13 @@
   'Noto Color Emoji';
 @form-vertical-label-padding: 0;
 
+:root {
+  --antd-primary-color: @primary-color;
+  --antd-success-color: @success-color;
+  --antd-warning-color: @warning-color;
+  --antd-error-color: @error-color;
+}
+
 //#region layout
 .ant-layout-sider {
   &,
@@ -44,5 +51,16 @@ span:has(> .ant-upload) {
 
 .ant-upload-list-item {
   margin-top: 10px;
+}
+//#endregion
+
+//#region table
+.ant-pagination {
+  &-prev &-item-link,
+  &-next &-item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 //#endregion
