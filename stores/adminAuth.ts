@@ -7,7 +7,7 @@ export const formSchema = object({
     .min(4, 'Password must be at least 4 characters'),
 })
 
-const useAuthTokenStore = defineStore('authToken', () => {
+export const useAuthTokenStore = defineStore('authToken', () => {
   const accessToken = useCookie('access_token', { maxAge: 86400, path: '/admin' })
 
   const getAccessToken = () => accessToken.value

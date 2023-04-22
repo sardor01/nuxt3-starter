@@ -65,6 +65,7 @@ export default defineNuxtConfig({
     public: {
       apiURL: process.env.NUXT_PUBLIC_API_URL,
       assetURL: process.env.NUXT_PUBLIC_ASSET_URL,
+      tinymceKey: process.env.NUXT_PUBLIC_TINYMCE_KEY,
     },
   },
   build: {

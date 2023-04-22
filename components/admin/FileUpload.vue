@@ -9,10 +9,12 @@ const props = withDefaults(
     images?: string[]
     formItemClass?: string
     multiple?: boolean
+    maxCount?: number
   }>(),
   {
     accept: '.jpeg,.jpg,.png,.webp',
     images: () => [],
+    maxCount: 8,
   },
 )
 const emit = defineEmits(['change'])
@@ -50,8 +52,8 @@ watch(fileList, (value) => {
     list-type="picture"
     :accept="accept"
     :multiple="multiple"
-    :max-count="multiple ? 8 : 1"
-    class="flex items-center justify-center"
+    :max-count="multiple ? maxCount : 1"
+    class="flex min-h-[150px] items-center justify-center"
     :before-upload="() => false"
   >
     <p class="ant-upload-drag-icon">

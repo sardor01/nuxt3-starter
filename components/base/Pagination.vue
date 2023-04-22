@@ -39,7 +39,6 @@ const props = withDefaults(
     hidePrevNext: false,
   },
 )
-
 const emit = defineEmits(['input'])
 
 const {

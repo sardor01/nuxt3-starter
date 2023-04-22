@@ -3,11 +3,19 @@ definePageMeta({
   layout: 'admin-default',
   middleware: 'admin-auth',
 })
+
+const editorValue = ref('')
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center">
-    <h1 class="mb-2 text-4xl font-bold">Admin Panel</h1>
-    <p class="text-gray-500">Welcome to the admin panel</p>
+  <div class="bg-white p-6">
+    <ARow :gutter="[24, 24]">
+      <ACol :xs="24" :xl="16">
+        <AdminFileUpload label="Choose an image" />
+      </ACol>
+      <ACol :xs="24" :xl="16">
+        <AdminTinymceEditor v-model:value="editorValue" />
+      </ACol>
+    </ARow>
   </div>
 </template>
