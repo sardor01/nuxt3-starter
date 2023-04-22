@@ -9,7 +9,7 @@ export interface BlobInfo {
 }
 
 export const useAdminFileManagerStore = defineStore('adminFileManager', () => {
-  const { $dashboardFetch, $config } = useNuxtApp()
+  const { $adminFetch, $config } = useNuxtApp()
 
   const isLoading = ref(false)
 
@@ -17,7 +17,7 @@ export const useAdminFileManagerStore = defineStore('adminFileManager', () => {
     const formData = new FormData()
     formData.append('file', blobInfo.blob(), blobInfo.filename())
 
-    const { data, error } = await $dashboardFetch('/file-manager/upload')
+    const { data, error } = await $adminFetch('/file-manager/upload')
       .post(formData)
       .json<{ data: unknown }>()
 
@@ -39,7 +39,7 @@ export const useAdminFileManagerStore = defineStore('adminFileManager', () => {
     formData.append('file', file)
 
     isLoading.value = true
-    const { data, error } = await $dashboardFetch('/file-manager/upload')
+    const { data, error } = await $adminFetch('/file-manager/upload')
       .post(formData)
       .json<{ data: unknown }>()
 
@@ -58,7 +58,7 @@ export const useAdminFileManagerStore = defineStore('adminFileManager', () => {
     }
 
     isLoading.value = true
-    const { data, error } = await $dashboardFetch('/file-manager/multiple-upload')
+    const { data, error } = await $adminFetch('/file-manager/multiple-upload')
       .post(formData)
       .json<{ data: unknown }>()
 
@@ -70,7 +70,7 @@ export const useAdminFileManagerStore = defineStore('adminFileManager', () => {
 
   const deleteFile = async (path: string) => {
     isLoading.value = true
-    await $dashboardFetch(`/file-manager/delete?file_path=${path}`).post()
+    await $adminFetch(`/file-manager/delete?file_path=${path}`).post()
     isLoading.value = false
   }
 

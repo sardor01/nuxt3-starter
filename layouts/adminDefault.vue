@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAdminAuthStore } from '~/stores/adminAuth'
+import { useAdminAuthStore } from '~/stores/admin/auth'
 
 const drawerVisible = ref(false)
 const showDrawer = ref(false)

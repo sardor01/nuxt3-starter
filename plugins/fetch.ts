@@ -1,13 +1,13 @@
 import { createFetch } from '@vueuse/core'
-import { useAuthTokenStore } from '~/stores/adminAuth'
+import { useAdminTokenStore } from '~/stores/admin/auth'
 
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
-  const { getAccessToken } = useAuthTokenStore()
+  const { getAccessToken } = useAdminTokenStore()
 
   const baseFetch = $fetch.create({ baseURL: config.public.apiURL })
 
-  const dashboardFetch = createFetch({
+  const adminFetch = createFetch({
     baseUrl: `${config.public.apiURL}/dashboard`,
     options: {
       beforeFetch: ({ options }) => {
@@ -24,7 +24,7 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       baseFetch,
-      dashboardFetch,
+      adminFetch,
     },
   }
 })

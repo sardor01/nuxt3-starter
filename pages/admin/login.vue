@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formSchema, useAdminAuthStore } from '~/stores/adminAuth'
+import { formSchema, useAdminAuthStore } from '~/stores/admin/auth'
 
 definePageMeta({
   layout: 'admin-default',

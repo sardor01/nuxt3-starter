@@ -1,4 +1,4 @@
-import { useAdminAuthStore } from '~/stores/adminAuth'
+import { useAdminAuthStore } from '~/stores/admin/auth'
 
 export default defineNuxtRouteMiddleware((to, _from) => {
   const adminAuthStore = useAdminAuthStore()
