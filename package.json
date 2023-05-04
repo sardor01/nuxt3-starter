@@ -31,7 +31,6 @@
     "@tinymce/tinymce-vue": "^5.1.0",
     "@vee-validate/nuxt": "^4.8.6",
     "@vee-validate/yup": "^4.8.6",
-    "ant-design-vue": "^3.2.20",
     "pinia": "^2.0.35",
     "yup": "1.1.1"
   },
@@ -50,7 +49,6 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
-    "less": "^4.1.3",
     "lint-staged": "^13.2.2",
     "nuxt": "^3.4.3",
     "postcss": "^8.4.23",

@@ -10,7 +10,7 @@
 
 Recommend using [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (remove Vetur).
 
-## Nuxt 3 Links
+## Useful Links
 
 - [Nuxt 3 Docs Guide](https://nuxt.com/docs/guide)
 - [Rendering](https://nuxt.com/docs/guide/concepts/rendering#coming-in-nuxt-3)
@@ -20,7 +20,7 @@ Recommend using [VS Code](https://code.visualstudio.com) with [Volar](https://gi
 - [Seo and Meta](https://nuxt.com/docs/getting-started/seo-meta)
 - [Environment Variables](https://nuxt.com/docs/getting-started/configuration#environment-variables-and-private-tokens)
 - [Route Rules](https://nuxt.com/docs/guide/concepts/rendering#route-rules)
-- [Fontawesome](https://fontawesome.com/search?o=r&m=free)
-- [Eslint Config](https://github.com/antfu/eslint-config)
-- [Tailwindcss](https://tailwindcss.com/docs)
+- [fontawesome](https://fontawesome.com/search?o=r&m=free)
+- [ESLint Config](https://github.com/antfu/eslint-config)
+- [tailwindcss](https://tailwindcss.com/docs)
 - [Nuxt/i18n](https://v8.i18n.nuxtjs.org)
