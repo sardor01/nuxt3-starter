@@ -1,11 +1,11 @@
 {
-  "prettier.enable": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
+    "source.fixAll": false,
     "source.fixAll.eslint": true
   },
   "files.associations": {
     "*.css": "postcss"
   },
-  "vue.features.codeActions.enable": false
+  "vue.codeActions.enabled": false
 }
