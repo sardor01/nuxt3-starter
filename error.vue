@@ -9,7 +9,6 @@ defineProps<{
   }
 }>()
 
-const route = useRoute()
 const { t } = useI18n()
 
 const errorDetails: Record<
@@ -47,8 +46,7 @@ const errorDetails: Record<
   },
 }
 
-const isAdmin = computed(() => route.path.includes('/admin'))
-const handleError = () => clearError({ redirect: isAdmin.value ? '/admin' : '/' })
+const handleError = () => clearError({ redirect: '/' })
 </script>
 
 <template>
