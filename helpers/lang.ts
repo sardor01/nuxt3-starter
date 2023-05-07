@@ -1,7 +1,6 @@
-import { locales } from '~/config'
+import { localeCodes } from '~/config'
 
 export const getLocaleValue = <V, T extends object>(obj: T, key: keyof T, locale?: string) => {
-  const localeCodes = locales.map((opt) => opt.code)
   const currentCode = localeCodes.find((code) => code === locale) ?? localeCodes[0]
   const str = key
     .toString()

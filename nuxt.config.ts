@@ -19,39 +19,38 @@ export default defineNuxtConfig({
       path: '~/components',
       extensions: ['.vue'],
     },
-    {
-      path: '~/components/icons',
-      extensions: ['.vue'],
-      prefix: '',
-    },
   ],
   modules: [
-    [
-      '@nuxtjs/i18n',
-      {
-        legacy: false,
-        strategy: 'prefix_except_default',
-        detectBrowserLanguage: {
-          useCookie: true,
-          alwaysRedirect: true,
-        },
-        locales,
-        defaultLocale,
-        lazy: true,
-        langDir: 'locales',
-        customRoutes: 'config',
-        pages: {
-          admin: false,
-        },
-        vueI18n: {
-          fallbackLocale: defaultLocale,
-        },
-      },
-    ],
-    ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
+    '@element-plus/nuxt',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
     '@vee-validate/nuxt',
     '@vueuse/nuxt',
   ],
+  // #region modules
+  i18n: {
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true,
+    },
+    locales,
+    defaultLocale,
+    lazy: true,
+    langDir: 'locales',
+    customRoutes: 'config',
+    pages: {
+      admin: false,
+    },
+    vueI18n: {
+      legacy: false,
+      fallbackLocale: defaultLocale,
+    },
+  },
+  pinia: {
+    autoImports: ['defineStore', 'storeToRefs'],
+  },
+  // #endregion
   postcss: {
     plugins: {
       tailwindcss: {},
