@@ -29,8 +29,8 @@
     "@pinia/nuxt": "^0.4.9",
     "@popperjs/core": "^2.11.7",
     "@tinymce/tinymce-vue": "^5.1.0",
-    "@vee-validate/nuxt": "^4.9.0",
-    "@vee-validate/yup": "^4.9.0",
+    "@vee-validate/nuxt": "^4.9.1",
+    "@vee-validate/yup": "^4.9.1",
     "pinia": "^2.0.35",
     "yup": "1.1.1"
   },
