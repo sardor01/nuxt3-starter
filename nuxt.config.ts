@@ -19,6 +19,11 @@ export default defineNuxtConfig({
       path: '~/components',
       extensions: ['.vue'],
     },
+    {
+      path: '~/components/icons',
+      extensions: ['.vue'],
+      prefix: '',
+    },
   ],
   modules: [
     '@element-plus/nuxt',
