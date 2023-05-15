@@ -15,124 +15,39 @@ const route = useRoute()
 
 const menu: MenuItem[] = [
   {
-    label: 'Dashboard',
-    icon: ElIconCirclePlus,
-    path: '/dashboard',
-    children: [
-      {
-        label: 'Analytics',
-        path: '/dashboard/analytics',
-      },
-      {
-        label: 'Workplace',
-        path: '/dashboard/workplace',
-      },
-    ],
-  },
-  {
-    label: 'Document',
+    label: 'Educational Stages',
+    path: '/admin/educational-stages',
     icon: ElIconDocument,
-    path: 'https://vuejs.org',
-    external: true,
   },
   {
-    label: 'Guide',
-    icon: ElIconPosition,
-    path: 'https://vuejs.org/guide',
-    external: true,
-  },
-  {
-    label: 'Components',
-    icon: ElIconShop,
-    path: '/components',
-    children: [
-      {
-        label: 'Dialog',
-        path: '/components/dialog',
-      },
-      {
-        label: 'Form',
-        path: '/components/form',
-        children: [
-          {
-            label: 'All examples',
-            path: '/components/form/all',
-          },
-          {
-            label: 'UseForm',
-            path: '/components/form/use-form',
-          },
-          {
-            label: 'RefForm',
-            path: '/components/form/ref-form',
-          },
-        ],
-      },
-      {
-        label: 'Table',
-        path: '/components/table',
-        children: [
-          {
-            label: 'Basic Example',
-            path: '/components/table/basic',
-          },
-          {
-            label: 'UseTable',
-            path: '/components/table/use-table',
-          },
-          {
-            label: 'RefTable',
-            path: '/components/table/ref-table',
-          },
-        ],
-      },
-      {
-        label: 'Password Input',
-        path: '/components/password-input',
-      },
-      {
-        label: 'Editor',
-        path: '/components/editor',
-      },
-    ],
-  },
-  {
-    label: 'Example',
+    label: 'Educational Forms',
+    path: '/admin/educational-forms',
     icon: ElIconCollection,
-    path: '/example',
-    children: [
-      {
-        label: 'Example Dialog',
-        path: '/example/dialog',
-      },
-      {
-        label: 'Example Page',
-        path: '/example/page',
-      },
-    ],
   },
   {
-    label: 'Error Page',
-    icon: ElIconWarningFilled,
-    path: '/error',
-    children: [
-      {
-        label: '401',
-        path: '/error/401',
-      },
-      {
-        label: '403',
-        path: '/error/403',
-      },
-      {
-        label: '404',
-        path: '/error/404',
-      },
-      {
-        label: '500',
-        path: '/error/500',
-      },
-    ],
+    label: 'Educational Directions',
+    path: '/admin/educational-directions',
+    icon: ElIconPosition,
+  },
+  {
+    label: 'Study Courses',
+    path: '/admin/study-courses',
+    icon: ElIconNotebook,
+  },
+  {
+    label: 'Tariffs',
+    path: '/admin/tariffs',
+    icon: ElIconMoney,
+  },
+  {
+    label: 'Reception Periods',
+    path: '/admin/reception-periods',
+    icon: ElIconCalendar,
+  },
+  {
+    label: 'Appeals',
+    path: '/admin/appeals',
+    icon: ElIconEdit,
   },
 ]
 </script>

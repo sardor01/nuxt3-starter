@@ -10,9 +10,9 @@ export default defineNuxtConfig({
     },
   },
   css: [
+    '~/assets/css/element/custom.scss',
     '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/fonts/roboto.css',
-    '~/assets/css/custom.css',
     '~/assets/css/tailwind.css',
   ],
   components: [
@@ -89,7 +89,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/css/element/index.scss" as element;',
+          additionalData: '@use "~/assets/css/element/index.scss" as *;',
         },
       },
     },

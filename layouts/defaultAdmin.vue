@@ -4,10 +4,10 @@ const collapse = ref(false)
 
 <template>
   <ElContainer class="min-h-screen">
-    <AdminTheSidebar :collapse="collapse" />
+    <AdminSidebar :collapse="collapse" />
 
     <ElContainer direction="vertical">
-      <AdminTheHeader v-model="collapse" />
+      <AdminHeader v-model="collapse" />
       <ElMain>
         <BaseContainer>
           <slot />

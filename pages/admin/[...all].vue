@@ -47,74 +47,9 @@ const tableData = [
 
 <template>
   <div>
-    <AdminTable :columns="columns" :data="tableData" class="mb-4" />
-    <div class="prose max-w-none">
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim iure temporibus reiciendis
-        non dicta eveniet impedit sequi vel ipsam voluptatem quas, sit perspiciatis, aspernatur
-        provident iusto voluptatibus pariatur quidem, ut magni. Corporis voluptas eos eligendi
-        soluta repellendus excepturi et quis nihil. Voluptates, at. Blanditiis reiciendis eius, at
-        adipisci hic quos illum aliquam enim perferendis amet natus eos eligendi dolorem fuga nam.
-        Molestiae, quaerat voluptates officiis autem esse cum cupiditate obcaecati quod quis
-        recusandae deleniti excepturi iste debitis nihil incidunt deserunt dolores quas perspiciatis
-        dolor fugit eum? Necessitatibus vero optio eligendi, tempora alias eveniet! Fugit, nobis
-        velit. Recusandae fuga neque dolor.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim iure temporibus reiciendis
-        non dicta eveniet impedit sequi vel ipsam voluptatem quas, sit perspiciatis, aspernatur
-        provident iusto voluptatibus pariatur quidem, ut magni. Corporis voluptas eos eligendi
-        soluta repellendus excepturi et quis nihil. Voluptates, at. Blanditiis reiciendis eius, at
-        adipisci hic quos illum aliquam enim perferendis amet natus eos eligendi dolorem fuga nam.
-        Molestiae, quaerat voluptates officiis autem esse cum cupiditate obcaecati quod quis
-        recusandae deleniti excepturi iste debitis nihil incidunt deserunt dolores quas perspiciatis
-        dolor fugit eum? Necessitatibus vero optio eligendi, tempora alias eveniet! Fugit, nobis
-        velit. Recusandae fuga neque dolor.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim iure temporibus reiciendis
-        non dicta eveniet impedit sequi vel ipsam voluptatem quas, sit perspiciatis, aspernatur
-        provident iusto voluptatibus pariatur quidem, ut magni. Corporis voluptas eos eligendi
-        soluta repellendus excepturi et quis nihil. Voluptates, at. Blanditiis reiciendis eius, at
-        adipisci hic quos illum aliquam enim perferendis amet natus eos eligendi dolorem fuga nam.
-        Molestiae, quaerat voluptates officiis autem esse cum cupiditate obcaecati quod quis
-        recusandae deleniti excepturi iste debitis nihil incidunt deserunt dolores quas perspiciatis
-        dolor fugit eum? Necessitatibus vero optio eligendi, tempora alias eveniet! Fugit, nobis
-        velit. Recusandae fuga neque dolor.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim iure temporibus reiciendis
-        non dicta eveniet impedit sequi vel ipsam voluptatem quas, sit perspiciatis, aspernatur
-        provident iusto voluptatibus pariatur quidem, ut magni. Corporis voluptas eos eligendi
-        soluta repellendus excepturi et quis nihil. Voluptates, at. Blanditiis reiciendis eius, at
-        adipisci hic quos illum aliquam enim perferendis amet natus eos eligendi dolorem fuga nam.
-        Molestiae, quaerat voluptates officiis autem esse cum cupiditate obcaecati quod quis
-        recusandae deleniti excepturi iste debitis nihil incidunt deserunt dolores quas perspiciatis
-        dolor fugit eum? Necessitatibus vero optio eligendi, tempora alias eveniet! Fugit, nobis
-        velit. Recusandae fuga neque dolor.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim iure temporibus reiciendis
-        non dicta eveniet impedit sequi vel ipsam voluptatem quas, sit perspiciatis, aspernatur
-        provident iusto voluptatibus pariatur quidem, ut magni. Corporis voluptas eos eligendi
-        soluta repellendus excepturi et quis nihil. Voluptates, at. Blanditiis reiciendis eius, at
-        adipisci hic quos illum aliquam enim perferendis amet natus eos eligendi dolorem fuga nam.
-        Molestiae, quaerat voluptates officiis autem esse cum cupiditate obcaecati quod quis
-        recusandae deleniti excepturi iste debitis nihil incidunt deserunt dolores quas perspiciatis
-        dolor fugit eum? Necessitatibus vero optio eligendi, tempora alias eveniet! Fugit, nobis
-        velit. Recusandae fuga neque dolor.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim iure temporibus reiciendis
-        non dicta eveniet impedit sequi vel ipsam voluptatem quas, sit perspiciatis, aspernatur
-        provident iusto voluptatibus pariatur quidem, ut magni. Corporis voluptas eos eligendi
-        soluta repellendus excepturi et quis nihil. Voluptates, at. Blanditiis reiciendis eius, at
-        adipisci hic quos illum aliquam enim perferendis amet natus eos eligendi dolorem fuga nam.
-        Molestiae, quaerat voluptates officiis autem esse cum cupiditate obcaecati quod quis
-        recusandae deleniti excepturi iste debitis nihil incidunt deserunt dolores quas perspiciatis
-        dolor fugit eum? Necessitatibus vero optio eligendi, tempora alias eveniet! Fugit, nobis
-        velit. Recusandae fuga neque dolor.
-      </p>
+    <div class="mb-4">
+      <AdminLink type="primary" to="/admin/create">Create</AdminLink>
     </div>
+    <AdminTable :columns="columns" :data="tableData" class="mb-4" />
   </div>
 </template>
