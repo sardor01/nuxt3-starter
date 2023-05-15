@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 module.exports = {
   apps: [
     {
-      name: 'nuxt3-starter',
-      port: '3000',
+      name: process.env.PM2_APP_NAME,
+      port: process.env.PM2_APP_PORT,
       watch: true,
       exec_mode: 'cluster',
       instances: 'max',
