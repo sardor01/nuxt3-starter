@@ -4,21 +4,18 @@ import { type BlobInfo, useAdminFileManagerStore } from '~/stores/admin/fileMana
 
 const props = withDefaults(
   defineProps<{
-    value: any
+    name: string
+    label: string
+    formItemClass?: string
     cloudChannel?: string
   }>(),
   { cloudChannel: '5' },
 )
 
-const emit = defineEmits(['update:value'])
-
 const config = useRuntimeConfig()
+const { t } = useI18n()
+const { value, errorMessage } = useField<string | undefined>(props.name)
 const { uploadImage } = useAdminFileManagerStore()
-
-const inputValue = computed({
-  get: () => props.value,
-  set: (value) => emit('update:value', value),
-})
 
 const handleTinyImageUpload = (blobInfo: BlobInfo, success: any, failure: any) => {
   uploadImage(blobInfo, success, failure)
@@ -26,23 +23,41 @@ const handleTinyImageUpload = (blobInfo: BlobInfo, success: any, failure: any) =
 </script>
 
 <template>
-  <Editor
-    v-model="inputValue"
-    :api-key="config.public.tinymceKey"
-    :value="value"
-    :cloud-channel="cloudChannel"
-    class="h-80 w-full border border-gray"
-    :init="{
-      height: 320,
-      menubar: true,
-      images_upload_handler: handleTinyImageUpload,
-      plugins: [
-        'advlist autolink lists code table link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table paste code help wordcount',
-      ],
-      toolbar:
-        'undo redo | code | table | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
-    }"
-  />
+  <ElFormItem
+    :error="errorMessage && t(errorMessage)"
+    :label="label"
+    size="large"
+    class="app-form-item"
+    :class="formItemClass"
+    required
+    inline-message
+  >
+    <Editor
+      v-model="value"
+      :api-key="config.public.tinymceKey"
+      :cloud-channel="cloudChannel"
+      class="h-80 w-full border border-[var(--el-border-color)]"
+      :init="{
+        width: '100%',
+        height: 320,
+        menubar: true,
+        images_upload_handler: handleTinyImageUpload,
+        plugins: [
+          'advlist autolink lists code table link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount',
+        ],
+        toolbar:
+          'undo redo | code | table | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+      }"
+    />
+  </ElFormItem>
 </template>
+
+<style lang="scss">
+.tox-tinymce {
+  font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+</style>

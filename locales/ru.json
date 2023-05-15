@@ -10,6 +10,10 @@
     "login": "Login",
     "logout": "Logout"
   },
+  "help": {
+    "fieldRequired": "Field is required",
+    "passwordMin4Length": "Password must be at least 4 characters"
+  },
   "pages": {
     "error": {
       "401": {

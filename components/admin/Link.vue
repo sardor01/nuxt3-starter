@@ -5,25 +5,19 @@ export default {
 </script>
 
 <script setup lang="ts">
-/* eslint-disable import/first */
-import type { RouteLocationRaw } from 'vue-router'
-import type { ButtonProps } from 'ant-design-vue'
+// eslint-disable-next-line import/first
+import type { RouteLocation, RouteLocationRaw } from 'vue-router'
 
 defineProps<{
   to: RouteLocationRaw
-  buttonProps: ButtonProps
 }>()
+const localePath = useLocalePath()
 </script>
 
 <template>
-  <NuxtLink v-slot="{ isExactActive, href: slotHref, navigate }" :to="to" custom>
-    <AButton
-      v-bind="{ ...buttonProps, ...$attrs }"
-      :href="slotHref"
-      :aria-current="isExactActive ? 'page' : undefined"
-      @click="navigate"
-    >
+  <NuxtLink v-slot="{ href, navigate }" :to="localePath(to as unknown as RouteLocation)" custom>
+    <ElButton tag="a" v-bind="$attrs" :href="href" @click="navigate">
       <slot />
-    </AButton>
+    </ElButton>
   </NuxtLink>
 </template>

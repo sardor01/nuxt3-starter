@@ -1,92 +1,143 @@
 <script setup lang="ts">
-import type { MenuProps, TableColumnType, TableProps } from 'ant-design-vue'
+import type { TableColumn, TablePagination } from '~/helpers/types'
 
-const props = defineProps<{
-  columns: TableColumnType[]
-  data: any[]
-  pagination?: { total: number; current: number; pageSize: number }
-  loading?: boolean
-  hideActions?: boolean
+withDefaults(
+  defineProps<{
+    columns: TableColumn[]
+    data: any[]
+    rowKey?: string
+    pagination?: TablePagination
+    loading?: boolean
+    can?: { edit?: boolean; delete?: boolean }
+  }>(),
+  {
+    rowKey: 'id',
+    can: () => ({ edit: true, delete: true }),
+  },
+)
+
+const emit = defineEmits<{
+  (e: 'pagination', page: number): void
+  (e: 'actions', type: 'edit' | 'delete', rowKey: number): void
 }>()
 
-const emit = defineEmits(['change', 'actions'])
-
-const tableScrollX = ref(0)
-const tableActions = [
-  {
-    key: 'edit',
-    label: 'Edit',
-    icon: 'fa-solid fa-pen-to-square',
-    className: 'text-antd-primary',
-  },
-  {
-    key: 'delete',
-    label: 'Delete',
-    icon: 'fa-solid fa-trash',
-    className: 'text-antd-error',
-  },
-]
-
-const tableColumns = computed(() => {
-  const columns = props.columns
-  if (!props.hideActions && !columns.some((column) => column.dataIndex === 'actions')) {
-    columns.push({ title: '', dataIndex: 'actions', minWidth: 66, fixed: 'right' })
-  }
-  return columns.map((column) => ({ ...column, width: column.minWidth }))
-})
-
-const handleTableChange: TableProps['onChange'] = (pagination) => {
-  emit('change', pagination.current)
+const handleDelete = (rowKey: number) => {
+  ElMessageBox.confirm('Item will be permanently deleted. Continue?', 'Warning', {
+    confirmButtonText: 'OK',
+    cancelButtonText: 'Cancel',
+  })
+    .then(() => {
+      emit('actions', 'delete', rowKey)
+      ElMessage({
+        type: 'error',
+        message: 'Delete completed',
+      })
+    })
+    .catch(() => {
+      ElMessage({
+        type: 'info',
+        message: 'Delete canceled',
+      })
+    })
 }
 
-const handleMenuClick: MenuProps['onClick'] = ({ key }) => {
-  const [type, id] = key.toString().split('_')
-  emit('actions', { id, type })
+const handlePagination = (page: number) => {
+  emit('pagination', page)
 }
-
-onBeforeMount(() => {
-  tableScrollX.value = props.columns.reduce((prev, curr) => prev + curr.minWidth!, 0)
-})
 </script>
 
 <template>
-  <div class="overflow-x-auto" style="-webkit-overflow-scrolling: touch">
-    <ATable
-      :scroll="{ x: tableScrollX }"
-      :columns="tableColumns"
-      :data-source="data"
-      :pagination="!!pagination && { ...pagination, showSizeChanger: false }"
-      :loading="loading"
-      :row-key="(record) => record.id"
-      bordered
-      @change="handleTableChange"
-    >
-      <template #bodyCell="{ column, record }">
-        <template v-if="column.dataIndex === 'actions' && !hideActions">
-          <ADropdown
-            overlay-class-name="!min-w-[120px]"
-            placement="bottomRight"
-            :trigger="['click']"
-          >
-            <template #overlay>
-              <AMenu @click="handleMenuClick">
-                <AMenuItem
-                  v-for="action in tableActions"
-                  :key="`${action.key}_${record.id}`"
-                  class="min-h-[34px]"
-                >
-                  <FontAwesomeIcon :icon="action.icon" class="mr-1" :class="action.className" />
-                  {{ action.label }}
-                </AMenuItem>
-              </AMenu>
-            </template>
-            <AButton class="!h-8 !w-8 !p-0">
-              <FontAwesomeIcon icon="fa-solid fa-ellipsis-vertical" size="lg" />
-            </AButton>
-          </ADropdown>
+  <div>
+    <ElTable v-loading="!!loading" :data="data" size="large" border>
+      <ElTableColumn
+        v-for="(col, colIndex) in columns"
+        :key="colIndex"
+        :prop="col.prop"
+        :label="col.label"
+        :width="col.width"
+        :min-width="col.minWidth"
+        :align="col.align"
+        :class-name="col.className"
+        :formatter="col.formatter"
+        :resizable="false"
+      >
+        <template #default="{ column, row }">
+          <slot :name="column.property" :current="row[column.property]" :row="row">
+            {{ row[column.property] }}
+          </slot>
         </template>
-        <slot :name="column.dataIndex" :record="record" />
-      </template>
-    </ATable>
+      </ElTableColumn>
+      <ElTableColumn
+        v-if="can.edit || can.delete"
+        align="center"
+        width="220"
+        fixed="right"
+        :resizable="false"
+      >
+        <template #default="scope">
+          <ElButton
+            v-if="can.edit"
+            :loading="loading"
+            @click="emit('actions', 'edit', scope.row[rowKey])"
+          >
+            Edit
+          </ElButton>
+          <ElButton
+            v-if="can.delete"
+            :loading="loading"
+            type="danger"
+            @click="handleDelete(scope.row[rowKey])"
+          >
+            Delete
+          </ElButton>
+        </template>
+      </ElTableColumn>
+    </ElTable>
+    <ElPagination
+      v-if="pagination"
+      :current-page="pagination.currentPage"
+      :page-size="pagination.pageSize"
+      :total="pagination.total"
+      layout="prev, pager, next"
+      background
+      hide-on-single-page
+      class="mt-2 justify-end"
+      @current-change="handlePagination"
+    />
   </div>
 </template>
+
+<style lang="scss">
+.el-table {
+  --el-table-text-color: var(--el-text-color-primary);
+  --el-table-header-text-color: var(--el-text-color-regular);
+
+  thead th {
+    font-weight: 600;
+  }
+
+  &__empty-block {
+    min-height: 150px;
+  }
+}
+
+.el-pagination {
+  &.is-background {
+    .btn-next,
+    .btn-prev,
+    .el-pager li {
+      margin: 0;
+    }
+  }
+}
+
+.el-pagination,
+.el-pager {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.el-pager li {
+  padding: 0 8px;
+}
+</style>

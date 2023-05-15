@@ -1,10 +1,8 @@
 import { type InferType, object, string } from 'yup'
 
 export const formSchema = object({
-  name: string().required('Name is required'),
-  password: string()
-    .required('Password is required')
-    .min(4, 'Password must be at least 4 characters'),
+  name: string().required('help.fieldRequired'),
+  password: string().required('help.fieldRequired').min(4, 'help.passwordMin4Length'),
 })
 
 export const useAdminTokenStore = defineStore('adminToken', () => {
@@ -24,24 +22,25 @@ export const useAdminTokenStore = defineStore('adminToken', () => {
 })
 
 export const useAdminAuthStore = defineStore('adminAuth', () => {
+  const router = useRouter()
   const { getAccessToken } = useAdminTokenStore()
 
   const isLoading = ref(false)
   const isUserLoggedIn = ref(!!getAccessToken())
 
-  const login = async (payload: InferType<typeof formSchema>, onSuccess: () => void) => {
+  const login = async (payload: InferType<typeof formSchema>) => {
     const { setAccessToken } = useAdminTokenStore()
     const token = `${payload.name}_${payload.password}_1234567890`
     isUserLoggedIn.value = !!token
     setAccessToken(token)
-    onSuccess()
+    router.push('/admin')
   }
 
-  const logout = (callback: () => void) => {
+  const logout = () => {
     const { setAccessToken } = useAdminTokenStore()
     isUserLoggedIn.value = false
     setAccessToken(null)
-    callback()
+    router.push('/admin/login')
   }
 
   return {

@@ -2,38 +2,47 @@
 import { formSchema, useAdminAuthStore } from '~/stores/admin/auth'
 
 definePageMeta({
-  layout: 'admin-default',
-  middleware: 'admin-auth',
-  isGuest: true,
+  layout: false,
 })
 
-const router = useRouter()
-const adminAuthStore = useAdminAuthStore()
-
+const store = useAdminAuthStore()
 const { handleSubmit } = useForm({ validationSchema: toTypedSchema(formSchema) })
 
-const onSubmit = handleSubmit(async (values) => {
-  await adminAuthStore.login(values, () => {
-    router.push('/admin')
-  })
+const onSubmit = handleSubmit((values) => {
+  store.login(values)
 })
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-lg bg-white p-8">
-    <AForm class="custom-ant-form" @submit.prevent="onSubmit">
-      <h1 class="mb-2 text-center text-3xl font-bold">Admin Panel</h1>
-      <VeeInput id="name" name="name" label="Full name" size="large" />
-      <VeePasswordInput id="password" name="password" label="Password" size="large" />
-      <AButton
-        type="primary"
-        html-type="submit"
-        size="large"
-        class="mt-2 w-full"
-        :loading="adminAuthStore.isLoading"
+  <div
+    class="flex min-h-screen w-full items-center justify-center bg-cover bg-no-repeat"
+    style="background-image: url('/img/login-bg.jpg')"
+  >
+    <BaseContainer>
+      <ElForm
+        label-position="top"
+        class="mx-auto my-6 max-w-xl rounded-[var(--el-border-radius-base)] bg-white p-6 md:my-8 md:p-8 lg:my-10 lg:p-10"
+        @submit="onSubmit"
       >
-        Login
-      </AButton>
-    </AForm>
+        <AdminInput name="name" label="Login" placeholder="Input your login" />
+        <AdminInput
+          name="password"
+          type="password"
+          label="Password"
+          placeholder="Input your password"
+          show-password
+        />
+
+        <ElButton
+          type="primary"
+          size="large"
+          native-type="submit"
+          class="w-full"
+          :loading="store.isLoading"
+        >
+          Login
+        </ElButton>
+      </ElForm>
+    </BaseContainer>
   </div>
 </template>

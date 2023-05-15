@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     },
   },
   css: [
+    '~/assets/css/element/custom.scss',
     '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/fonts/roboto.css',
     '~/assets/css/tailwind.css',
@@ -26,32 +27,39 @@ export default defineNuxtConfig({
     },
   ],
   modules: [
-    [
-      '@nuxtjs/i18n',
-      {
-        legacy: false,
-        strategy: 'prefix_except_default',
-        detectBrowserLanguage: {
-          useCookie: true,
-          alwaysRedirect: true,
-        },
-        locales,
-        defaultLocale,
-        lazy: true,
-        langDir: 'locales',
-        customRoutes: 'config',
-        pages: {
-          admin: false,
-        },
-        vueI18n: {
-          fallbackLocale: defaultLocale,
-        },
-      },
-    ],
-    ['@pinia/nuxt', { autoImports: ['defineStore', 'storeToRefs'] }],
+    '@element-plus/nuxt',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
     '@vee-validate/nuxt',
     '@vueuse/nuxt',
   ],
+  // #region modules
+  elementPlus: {
+    importStyle: 'scss',
+  },
+  i18n: {
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true,
+    },
+    locales,
+    defaultLocale,
+    lazy: true,
+    langDir: 'locales',
+    customRoutes: 'config',
+    pages: {
+      admin: false,
+    },
+    vueI18n: {
+      legacy: false,
+      fallbackLocale: defaultLocale,
+    },
+  },
+  pinia: {
+    autoImports: ['defineStore', 'storeToRefs'],
+  },
+  // #endregion
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -80,8 +88,8 @@ export default defineNuxtConfig({
   vite: {
     css: {
       preprocessorOptions: {
-        less: {
-          javascriptEnabled: true,
+        scss: {
+          additionalData: '@use "~/assets/css/element/index.scss" as *;',
         },
       },
     },

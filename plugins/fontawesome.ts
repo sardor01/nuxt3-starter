@@ -4,15 +4,11 @@ import {
   faAnglesRight,
   faChevronDown,
   faDownload,
-  faEllipsisVertical,
   faFingerprint,
   faList,
   faLock,
-  faPenToSquare,
   faRotate,
   faSpinner,
-  faTrash,
-  faUpload,
 } from '@fortawesome/free-solid-svg-icons'
 
 export default defineNuxtPlugin(() => {
@@ -22,14 +18,10 @@ export default defineNuxtPlugin(() => {
     faAnglesRight,
     faChevronDown,
     faDownload,
-    faEllipsisVertical,
     faFingerprint,
     faList,
     faLock,
-    faPenToSquare,
     faRotate,
     faSpinner,
-    faTrash,
-    faUpload,
   )
 })

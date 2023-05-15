@@ -33,22 +33,17 @@ const props = withDefaults(
 )
 
 const route = useRoute()
+
+const dropdown = ref<HTMLElement>()
+const tooltip = ref<HTMLElement>()
 const open = ref(false)
-const dropdown = ref<HTMLElement | null>(null)
-const tooltip = ref<HTMLElement | null>(null)
 const instance = ref<PopperInstance | null>(null)
 
-const handleOpen = () => {
-  open.value = true
-}
+const handleOpen = () => (open.value = true)
 
-const handleClose = () => {
-  open.value = false
-}
+const handleClose = () => (open.value = false)
 
-const handleToggle = () => {
-  open.value = !open.value
-}
+const handleToggle = () => (open.value = !open.value)
 
 onClickOutside(dropdown, handleClose)
 

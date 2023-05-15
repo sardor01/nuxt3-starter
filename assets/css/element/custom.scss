@@ -1,0 +1,22 @@
+/* form-item */
+.el-form--label-top .el-form-item__error {
+  margin-left: 4px;
+}
+
+.app-form-item.is-error:last-of-type {
+  padding-bottom: 14px;
+}
+
+[type='text'],
+[type='email'],
+[type='password'],
+[type='number'],
+[type='tel'],
+[multiple],
+textarea,
+select {
+  &.el-input__inner:focus {
+    box-shadow: none;
+    border: none;
+  }
+}

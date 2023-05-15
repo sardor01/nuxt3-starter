@@ -1,91 +1,55 @@
-<script setup lang="ts">
+<script setup>
 definePageMeta({
-  layout: 'admin-default',
-  middleware: 'admin-auth',
+  layout: 'default-admin',
 })
-
-const editorValue = ref('')
-
-const data = [
-  {
-    id: 1,
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tel: '0575-22098909',
-  },
-  {
-    id: 2,
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tel: '0571-22098333',
-  },
-  {
-    id: 3,
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tel: '0575-22098909',
-  },
-  {
-    id: 4,
-    name: 'Jim Red',
-    age: 18,
-    address: 'London No. 2 Lake Park',
-    tel: '0575-22098909',
-  },
-  {
-    id: 5,
-    name: 'Jake White',
-    age: 18,
-    address: 'Dublin No. 2 Lake Park',
-    tel: '0575-22098909',
-  },
-]
 
 const columns = [
-  { title: 'Name', dataIndex: 'name', minWidth: 150 },
-  { title: 'Age', dataIndex: 'age', minWidth: 100 },
-  { title: 'Address', dataIndex: 'address', minWidth: 250 },
-  { title: 'Home phone', dataIndex: 'tel', minWidth: 200 },
+  {
+    prop: 'date',
+    label: 'Date',
+    width: 120,
+  },
+  {
+    prop: 'name',
+    label: 'Name',
+    width: 150,
+  },
+  {
+    prop: 'address',
+    label: 'Address',
+    minWidth: 250,
+  },
 ]
 
-const pagination = reactive({
-  total: 100,
-  current: 5,
-  pageSize: 10,
-})
-
-const handleTableChange = (currentPage?: number) => {
-  if (currentPage) {
-    pagination.current = currentPage
-  }
-}
+const tableData = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+]
 </script>
 
 <template>
-  <div class="bg-white p-6">
-    <ARow :gutter="[24, 24]">
-      <ACol :xs="24" :xl="16">
-        <AdminFileUpload label="Choose an image" />
-      </ACol>
-      <ACol :xs="24" :xl="16">
-        <AdminTinymceEditor v-model:value="editorValue" />
-      </ACol>
-      <ACol :span="24">
-        <div class="mb-4">
-          <AdminLink to="/admin/articles/create" :button-props="{ type: 'primary' }">
-            Create an article
-          </AdminLink>
-        </div>
-        <AdminTable
-          :columns="columns"
-          :data="data"
-          :pagination="pagination"
-          @change="handleTableChange"
-        />
-      </ACol>
-    </ARow>
+  <div>
+    <div class="mb-4">
+      <AdminLink type="primary" to="/admin/create">Create</AdminLink>
+    </div>
+    <AdminTable :columns="columns" :data="tableData" class="mb-4" />
   </div>
 </template>

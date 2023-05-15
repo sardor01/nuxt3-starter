@@ -42,10 +42,6 @@ module.exports = {
       red: '#89001a',
       green: '#04d65c',
       yellow: '#ffb131',
-      'antd-primary': 'var(--antd-primary-color)',
-      'antd-success': 'var(--antd-success-color)',
-      'antd-warning': 'var(--antd-warning-color)',
-      'antd-error': 'var(--antd-error-color)',
     },
     screens: {
       xs: '475px',
