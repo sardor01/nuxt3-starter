@@ -15,7 +15,7 @@ const { checkFiles } = useFilesCheck({ accept: props.accept, limitSize: props.li
 
 const assetUrl = import.meta.env.VITE_ASSET_URL
 
-const fileInput = ref<HTMLInputElement | null>(null)
+const fileInput = ref<HTMLInputElement>()
 
 const handleChange = () => {
   if (!fileInput.value) return

@@ -1,13 +1,8 @@
-<script setup lang="ts">
-const collapse = ref(false)
-</script>
-
 <template>
-  <ElContainer class="min-h-screen">
-    <AdminSidebar :collapse="collapse" />
-
+  <ElContainer>
+    <AdminSidebar />
     <ElContainer direction="vertical">
-      <AdminHeader v-model="collapse" />
+      <AdminHeader />
       <ElMain>
         <BaseContainer>
           <slot />

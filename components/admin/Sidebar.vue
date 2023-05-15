@@ -1,62 +1,28 @@
 <script setup lang="ts">
-defineProps<{
-  collapse: boolean
-}>()
-
-interface MenuItem {
-  label: string
-  path: string
-  external?: boolean
-  icon?: any
-  children?: MenuItem[]
-}
+import { useAdminMenuStore } from '~/stores/admin/menu'
 
 const route = useRoute()
+const store = useAdminMenuStore()
 
-const menu: MenuItem[] = [
-  {
-    label: 'Educational Stages',
-    path: '/admin/educational-stages',
-    icon: ElIconDocument,
-  },
-  {
-    label: 'Educational Forms',
-    path: '/admin/educational-forms',
-    icon: ElIconCollection,
-  },
-  {
-    label: 'Educational Directions',
-    path: '/admin/educational-directions',
-    icon: ElIconPosition,
-  },
-  {
-    label: 'Study Courses',
-    path: '/admin/study-courses',
-    icon: ElIconNotebook,
-  },
-  {
-    label: 'Tariffs',
-    path: '/admin/tariffs',
-    icon: ElIconMoney,
-  },
-  {
-    label: 'Reception Periods',
-    path: '/admin/reception-periods',
-    icon: ElIconCalendar,
-  },
-  {
-    label: 'Appeals',
-    path: '/admin/appeals',
-    icon: ElIconEdit,
-  },
-]
+const sidebarMenu = ref<HTMLElement>()
+
+onClickOutside(sidebarMenu, store.handleClickOutside)
 </script>
 
 <template>
-  <div class="sidebar sticky top-0 h-screen flex-shrink-0 overflow-auto">
+  <div
+    class="sidebar top-0 z-navigationDrawer h-screen flex-shrink-0 overflow-auto"
+    :class="{ 'sidebar--collapse': store.collapse }"
+  >
     <ElScrollbar wrap-class="sidebar-scrollbar__wrap">
-      <ElMenu :collapse="collapse" popper-effect="light" router>
-        <template v-for="(menuItem, index) in menu">
+      <ElMenu
+        ref="sidebarMenu"
+        class="sidebar-menu"
+        :collapse="store.collapse"
+        :collapse-transition="false"
+        router
+      >
+        <template v-for="(menuItem, index) in store.menu">
           <ElSubMenu v-if="menuItem.children" :key="`sub-${index}`" :index="index.toString()">
             <template #title>
               <ElIcon><component :is="menuItem.icon" /></ElIcon>
@@ -136,6 +102,27 @@ const menu: MenuItem[] = [
 
   .sidebar-scrollbar__wrap {
     background-color: var(--el-menu-bg-color);
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+.sidebar {
+  position: sticky;
+
+  @media (max-width: 1023.9px) {
+    position: fixed;
+
+    &:not(&--collapse)::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &-menu.el-menu--collapse {
+      width: 0;
+    }
   }
 }
 </style>

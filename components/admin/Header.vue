@@ -1,31 +1,21 @@
 <script setup lang="ts">
+import { useAdminMenuStore } from '~/stores/admin/menu'
 import { useAdminAuthStore } from '~/stores/admin/auth'
 
-const props = defineProps<{
-  modelValue: boolean
-}>()
-
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean): void
-}>()
-
+const store = useAdminMenuStore()
 const { logout } = useAdminAuthStore()
 
-const collapse = computed({
-  get: () => props.modelValue,
-  set: (value) => emit('update:modelValue', value),
-})
+watch(() => store.collapse, store.watchCollapse)
 </script>
 
 <template>
   <ElHeader class="flex items-center justify-between">
-    <ElButton class="trigger" text @click="collapse = !collapse">
+    <ElButton class="trigger" text @click="store.toggleCollapse">
       <ElIcon size="20">
-        <MenuUnfoldIcon v-if="collapse" />
+        <MenuUnfoldIcon v-if="store.collapse" />
         <MenuFoldIcon v-else />
       </ElIcon>
     </ElButton>
-
     <ElButton type="primary" class="mr-4" @click="logout">Logout</ElButton>
   </ElHeader>
 </template>
