@@ -3,6 +3,7 @@ import { mixed, object, string } from 'yup'
 
 definePageMeta({
   layout: 'default-admin',
+  middleware: 'admin-auth',
 })
 
 const languages = ["O'zbek", 'Русский', 'English']

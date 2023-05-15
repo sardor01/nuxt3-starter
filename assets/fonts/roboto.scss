@@ -1,0 +1,26 @@
+$font-family: 'Roboto';
+$common-path: './roboto/roboto';
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);
+
+@each $w-string, $w-number in $font-weights {
+  @font-face {
+    font-family: #{$font-family};
+    src: url(#{$common-path}-#{$w-string}.woff2) format('woff2'),
+      url(#{$common-path}-#{$w-string}.woff) format('woff');
+    font-weight: #{$w-number};
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: #{$font-family};
+    src: url(#{$common-path}-#{$w-string}italic.woff2) format('woff2'),
+      url(#{$common-path}-#{$w-string}italic.woff) format('woff');
+    font-weight: #{$w-number};
+    font-style: italic;
+    font-display: swap;
+  }
+}

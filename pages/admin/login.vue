@@ -3,6 +3,7 @@ import { formSchema, useAdminAuthStore } from '~/stores/admin/auth'
 
 definePageMeta({
   layout: false,
+  middleware: 'admin-auth',
 })
 
 const store = useAdminAuthStore()

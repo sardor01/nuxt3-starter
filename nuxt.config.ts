@@ -10,9 +10,9 @@ export default defineNuxtConfig({
     },
   },
   css: [
+    '~/assets/fonts/roboto.scss',
     '~/assets/css/element/custom.scss',
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/fonts/roboto.css',
     '~/assets/css/tailwind.css',
   ],
   components: [

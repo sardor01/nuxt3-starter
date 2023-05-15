@@ -1,6 +1,7 @@
 <script setup>
 definePageMeta({
   layout: 'default-admin',
+  middleware: 'admin-auth',
 })
 
 const columns = [
