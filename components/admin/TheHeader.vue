@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { useAdminAuthStore } from '~/stores/admin/auth'
+
 const props = defineProps<{
   modelValue: boolean
 }>()
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void
+}>()
+
+const { logout } = useAdminAuthStore()
 
 const collapse = computed({
   get: () => props.modelValue,
@@ -12,13 +18,15 @@ const collapse = computed({
 </script>
 
 <template>
-  <ElHeader class="flex items-center">
+  <ElHeader class="flex items-center justify-between">
     <ElButton class="trigger" text @click="collapse = !collapse">
       <ElIcon size="20">
         <MenuUnfoldIcon v-if="collapse" />
         <MenuFoldIcon v-else />
       </ElIcon>
     </ElButton>
+
+    <ElButton type="primary" class="mr-4" @click="logout">Logout</ElButton>
   </ElHeader>
 </template>
 
@@ -29,8 +37,8 @@ const collapse = computed({
 }
 
 .el-button.is-text.trigger {
-  height: calc(var(--el-header-height) - 8px);
-  width: calc(var(--el-header-height) - 8px);
+  height: calc(var(--el-header-height) - 12px);
+  width: calc(var(--el-header-height) - 12px);
   display: flex;
   padding: 10px;
   cursor: pointer;

@@ -40,7 +40,9 @@ const props = withDefaults(
   },
 )
 
-const emit = defineEmits(['input'])
+const emit = defineEmits<{
+  (e: 'input', value: number): void
+}>()
 
 const {
   value,

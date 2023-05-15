@@ -4,20 +4,20 @@ import { type BlobInfo, useAdminFileManagerStore } from '~/stores/admin/fileMana
 
 const props = withDefaults(
   defineProps<{
-    value: any
+    modelValue: any
     cloudChannel?: string
   }>(),
   { cloudChannel: '5' },
 )
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:modelValue'])
 
 const config = useRuntimeConfig()
 const { uploadImage } = useAdminFileManagerStore()
 
 const inputValue = computed({
-  get: () => props.value,
-  set: (value) => emit('update:value', value),
+  get: () => props.modelValue,
+  set: (value) => emit('update:modelValue', value),
 })
 
 const handleTinyImageUpload = (blobInfo: BlobInfo, success: any, failure: any) => {
@@ -29,7 +29,7 @@ const handleTinyImageUpload = (blobInfo: BlobInfo, success: any, failure: any) =
   <Editor
     v-model="inputValue"
     :api-key="config.public.tinymceKey"
-    :value="value"
+    :value="modelValue"
     :cloud-channel="cloudChannel"
     class="h-80 w-full border border-gray"
     :init="{

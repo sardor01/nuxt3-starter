@@ -37,11 +37,10 @@ export const useAdminAuthStore = defineStore('adminAuth', () => {
     onSuccess()
   }
 
-  const logout = (callback: () => void) => {
+  const logout = () => {
     const { setAccessToken } = useAdminTokenStore()
     isUserLoggedIn.value = false
     setAccessToken(null)
-    callback()
   }
 
   return {

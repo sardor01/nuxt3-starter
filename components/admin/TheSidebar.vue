@@ -3,7 +3,17 @@ defineProps<{
   collapse: boolean
 }>()
 
-const menu = [
+interface MenuItem {
+  label: string
+  path: string
+  external?: boolean
+  icon?: any
+  children?: MenuItem[]
+}
+
+const route = useRoute()
+
+const menu: MenuItem[] = [
   {
     label: 'Dashboard',
     icon: ElIconCirclePlus,
@@ -129,8 +139,8 @@ const menu = [
 
 <template>
   <div class="sidebar sticky top-0 h-screen flex-shrink-0 overflow-auto">
-    <ElScrollbar wrap-class="sidebar-scrollbar__wrap" always>
-      <ElMenu :collapse="collapse" popper-effect="light">
+    <ElScrollbar wrap-class="sidebar-scrollbar__wrap">
+      <ElMenu :collapse="collapse" popper-effect="light" router>
         <template v-for="(menuItem, index) in menu">
           <ElSubMenu v-if="menuItem.children" :key="`sub-${index}`" :index="index.toString()">
             <template #title>
@@ -148,6 +158,8 @@ const menu = [
                   v-for="(subSubMenuItem, subSubMenuIndex) in subMenuItem.children"
                   :key="subSubMenuIndex"
                   :index="`${index}-${subMenuIndex}-${subSubMenuIndex}`"
+                  :route="subSubMenuItem.path"
+                  :class="{ 'is-active': route.path === subSubMenuItem.path }"
                 >
                   <template #title>{{ subSubMenuItem.label }}</template>
                 </ElMenuItem>
@@ -156,12 +168,20 @@ const menu = [
                 v-else
                 :key="`sub-item-${subMenuIndex}`"
                 :index="`${index}-${subMenuIndex}`"
+                :route="subMenuItem.path"
+                :class="{ 'is-active': route.path === subMenuItem.path }"
               >
                 <template #title>{{ subMenuItem.label }}</template>
               </ElMenuItem>
             </template>
           </ElSubMenu>
-          <ElMenuItem v-else :key="`item-${index}`" :index="index.toString()">
+          <ElMenuItem
+            v-else
+            :key="`item-${index}`"
+            :index="index.toString()"
+            :route="menuItem.path"
+            :class="{ 'is-active': route.path === menuItem.path }"
+          >
             <ElIcon><component :is="menuItem.icon" /></ElIcon>
             <template #title>{{ menuItem.label }}</template>
           </ElMenuItem>
@@ -179,6 +199,8 @@ const menu = [
   --el-menu-hover-text-color: #ffffff;
   --el-menu-active-color: #ffffff;
   --el-menu-active-bg-color: var(--el-color-primary);
+  --el-menu-item-height: 50px;
+  --el-menu-sub-item-height: 50px;
 
   .el-menu {
     border-right: 0;

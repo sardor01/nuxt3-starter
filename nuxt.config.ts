@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/fonts/roboto.css',
+    '~/assets/css/custom.css',
     '~/assets/css/tailwind.css',
   ],
   components: [
@@ -33,6 +34,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   // #region modules
+  elementPlus: {
+    importStyle: 'scss',
+  },
   i18n: {
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
@@ -80,5 +84,14 @@ export default defineNuxtConfig({
       '@fortawesome/free-regular-svg-icons',
       '@fortawesome/free-solid-svg-icons',
     ],
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/css/element/index.scss" as element;',
+        },
+      },
+    },
   },
 })
