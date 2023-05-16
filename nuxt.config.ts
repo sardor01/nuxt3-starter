@@ -51,10 +51,6 @@ export default defineNuxtConfig({
     pages: {
       admin: false,
     },
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: defaultLocale,
-    },
   },
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
@@ -76,14 +72,14 @@ export default defineNuxtConfig({
       tinymceKey: process.env.NUXT_PUBLIC_TINYMCE_KEY,
     },
   },
-  build: {
-    transpile: [
-      '@fortawesome/vue-fontawesome',
-      '@fortawesome/fontawesome-svg-core',
-      '@fortawesome/free-brands-svg-icons',
-      '@fortawesome/free-regular-svg-icons',
-      '@fortawesome/free-solid-svg-icons',
-    ],
+  typescript: {
+    shim: true,
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        moduleResolution: 'bundler',
+      },
+    },
   },
   vite: {
     css: {
@@ -93,5 +89,14 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  build: {
+    transpile: [
+      '@fortawesome/vue-fontawesome',
+      '@fortawesome/fontawesome-svg-core',
+      '@fortawesome/free-brands-svg-icons',
+      '@fortawesome/free-regular-svg-icons',
+      '@fortawesome/free-solid-svg-icons',
+    ],
   },
 })
