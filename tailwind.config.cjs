@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 const defaultTheme = require('tailwindcss/defaultTheme')
+const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
 
 const backfaceVisibility = plugin(({ addUtilities }) => {
   addUtilities({
@@ -78,5 +79,12 @@ module.exports = {
       },
     },
   },
-  plugins: [backfaceVisibility, require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+  plugins: [
+    backfaceVisibility,
+    iconsPlugin({
+      collections: getIconCollections(['ep', 'fa6-solid']),
+    }),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+  ],
 }

@@ -21,10 +21,10 @@ const changeLocale = (item: (typeof locales.value)[number]) => {
   >
     <template #trigger>
       <span class="flex items-center rounded-md uppercase text-dark">
-        <span class="ml-0.5 mr-1.5 font-semibold">
+        <span class="ml-0.5 mr-1.5 font-normal">
           {{ currentLocale }}
         </span>
-        <FontAwesomeIcon icon="fa-solid fa-chevron-down" size="xs" class="mb-px" />
+        <span class="i-fa6-solid-chevron-down h-3 w-3" />
       </span>
     </template>
     <template #item="{ item }: { item: (typeof locales.value)[number] }">

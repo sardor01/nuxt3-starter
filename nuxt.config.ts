@@ -10,9 +10,8 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    '~/assets/fonts/roboto.scss',
     '~/assets/css/element/custom.scss',
-    '@fortawesome/fontawesome-svg-core/styles.css',
+    '~/assets/fonts/roboto.scss',
     '~/assets/css/tailwind.css',
   ],
   components: [
@@ -35,6 +34,7 @@ export default defineNuxtConfig({
   ],
   // #region modules
   elementPlus: {
+    icon: false,
     importStyle: 'scss',
   },
   i18n: {
@@ -89,14 +89,5 @@ export default defineNuxtConfig({
         },
       },
     },
-  },
-  build: {
-    transpile: [
-      '@fortawesome/vue-fontawesome',
-      '@fortawesome/fontawesome-svg-core',
-      '@fortawesome/free-brands-svg-icons',
-      '@fortawesome/free-regular-svg-icons',
-      '@fortawesome/free-solid-svg-icons',
-    ],
   },
 })

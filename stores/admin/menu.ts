@@ -1,50 +1,12 @@
-interface MenuItem {
+export interface MenuItem {
   label: string
   path: string
   external?: boolean
-  icon?: any
+  icon?: string
   children?: MenuItem[]
 }
 
 export const useAdminMenuStore = defineStore('adminMenu', () => {
-  const menu = markRaw<MenuItem[]>([
-    {
-      label: 'Educational Stages',
-      path: '/admin/educational-stages',
-      icon: ElIconDocument,
-    },
-    {
-      label: 'Educational Forms',
-      path: '/admin/educational-forms',
-      icon: ElIconCollection,
-    },
-    {
-      label: 'Educational Directions',
-      path: '/admin/educational-directions',
-      icon: ElIconPosition,
-    },
-    {
-      label: 'Study Courses',
-      path: '/admin/study-courses',
-      icon: ElIconNotebook,
-    },
-    {
-      label: 'Tariffs',
-      path: '/admin/tariffs',
-      icon: ElIconMoney,
-    },
-    {
-      label: 'Reception Periods',
-      path: '/admin/reception-periods',
-      icon: ElIconCalendar,
-    },
-    {
-      label: 'Appeals',
-      path: '/admin/appeals',
-      icon: ElIconEdit,
-    },
-  ])
-
   const isSmallScreen = useMediaQuery('(max-width: 1023.9px)')
 
   const collapse = ref(isSmallScreen.value)
@@ -66,7 +28,6 @@ export const useAdminMenuStore = defineStore('adminMenu', () => {
   }
 
   return {
-    menu,
     collapse,
     toggleCollapse,
     handleClickOutside,

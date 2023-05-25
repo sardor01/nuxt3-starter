@@ -72,7 +72,7 @@ const btnSize = computed(() => {
       disableButton && 'pointer-events-none opacity-80',
     ]"
   >
-    <FontAwesomeIcon v-if="loading" icon="fa-solid fa-spinner" size="xl" spin />
+    <span v-if="loading" class="i-fa6-solid-spinner h-5 w-5 animate-spin" />
     <slot v-else />
   </component>
 </template>

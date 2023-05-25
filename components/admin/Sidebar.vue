@@ -1,8 +1,46 @@
 <script setup lang="ts">
-import { useAdminMenuStore } from '~/stores/admin/menu'
+import { type MenuItem, useAdminMenuStore } from '~/stores/admin/menu'
 
 const route = useRoute()
 const store = useAdminMenuStore()
+
+const menu: MenuItem[] = [
+  {
+    label: 'Educational Stages',
+    path: '/admin/educational-stages',
+    icon: 'i-ep-document',
+  },
+  {
+    label: 'Educational Forms',
+    path: '/admin/educational-forms',
+    icon: 'i-ep-collection',
+  },
+  {
+    label: 'Educational Directions',
+    path: '/admin/educational-directions',
+    icon: 'i-ep-position',
+  },
+  {
+    label: 'Study Courses',
+    path: '/admin/study-courses',
+    icon: 'i-ep-notebook',
+  },
+  {
+    label: 'Tariffs',
+    path: '/admin/tariffs',
+    icon: 'i-ep-money',
+  },
+  {
+    label: 'Reception Periods',
+    path: '/admin/reception-periods',
+    icon: 'i-ep-calendar',
+  },
+  {
+    label: 'Appeals',
+    path: '/admin/appeals',
+    icon: 'i-ep-edit',
+  },
+]
 
 const sidebarMenu = ref<HTMLElement>()
 
@@ -22,10 +60,10 @@ onClickOutside(sidebarMenu, store.handleClickOutside)
         :collapse-transition="false"
         router
       >
-        <template v-for="(menuItem, index) in store.menu">
+        <template v-for="(menuItem, index) in menu">
           <ElSubMenu v-if="menuItem.children" :key="`sub-${index}`" :index="index.toString()">
             <template #title>
-              <ElIcon><component :is="menuItem.icon" /></ElIcon>
+              <ElIcon><span :class="menuItem.icon" /></ElIcon>
               <span>{{ menuItem.label }}</span>
             </template>
             <template v-for="(subMenuItem, subMenuIndex) in menuItem.children">
@@ -63,7 +101,7 @@ onClickOutside(sidebarMenu, store.handleClickOutside)
             :route="menuItem.path"
             :class="{ 'is-active': route.path === menuItem.path }"
           >
-            <ElIcon><component :is="menuItem.icon" /></ElIcon>
+            <ElIcon><span :class="menuItem.icon" /></ElIcon>
             <template #title>{{ menuItem.label }}</template>
           </ElMenuItem>
         </template>

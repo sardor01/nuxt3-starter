@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    value?: number
+    value: number
     pageCount: number
     forcePage?: number
     clickHandler?: Function
@@ -204,7 +204,7 @@ onBeforeUpdate(() => {
         @click="prevPage()"
         @keyup.enter="prevPage()"
       >
-        <FontAwesomeIcon icon="fa-solid fa-angles-left" />
+        <span class="i-fa6-solid-angles-left" title="Previous" />
       </BaseButton>
     </li>
 
@@ -263,7 +263,7 @@ onBeforeUpdate(() => {
         @click="nextPage()"
         @keyup.enter="nextPage()"
       >
-        <FontAwesomeIcon icon="fa-solid fa-angles-right" />
+        <span class="i-fa6-solid-angles-right" title="Next" />
       </BaseButton>
     </li>
 

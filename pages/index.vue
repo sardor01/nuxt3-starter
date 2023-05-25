@@ -8,25 +8,25 @@ const features = [
     name: 'Push to deploy',
     description:
       'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: 'fa-solid fa-download',
+    icon: 'i-fa6-solid-download',
   },
   {
     name: 'SSL certificates',
     description:
       'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: 'fa-solid fa-lock',
+    icon: 'i-fa6-solid-lock',
   },
   {
     name: 'Simple queues',
     description:
       'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: 'fa-solid fa-rotate',
+    icon: 'i-fa6-solid-rotate',
   },
   {
     name: 'Advanced security',
     description:
       'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: 'fa-solid fa-fingerprint',
+    icon: 'i-fa6-solid-fingerprint',
   },
 ]
 </script>
@@ -43,6 +43,21 @@ const features = [
           Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas
           a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
         </p>
+        <BaseButton class="mt-4" loading>Click me</BaseButton>
+        <BasePagination
+          :value="6"
+          :page-count="10"
+          container-class="flex flex-wrap flex-row justify-center items-center text-sm gap-1.5 mt-6 md:text-base md:gap-2 md:mt-8"
+          page-class="rounded-full border first:ml-0 last:mr-0"
+          prev-class="text-red"
+          next-class="text-red"
+          page-link-class="w-8 h-8 md:w-10 md:h-10 rounded-full"
+          prev-link-class="w-6 h-6 md:w-8 md:h-8 rounded-full"
+          next-link-class="w-6 h-6 md:w-8 md:h-8 rounded-full"
+          active-class="bg-red text-white border-red"
+          not-active-class="border-gray"
+          disabled-class="!text-gray"
+        />
       </div>
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
         <dl
@@ -53,7 +68,7 @@ const features = [
               <div
                 class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue"
               >
-                <FontAwesomeIcon :icon="feature.icon" size="lg" class="text-white" />
+                <span class="text-xl text-white" :class="feature.icon" />
               </div>
               {{ feature.name }}
             </dt>
