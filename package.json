@@ -38,6 +38,7 @@
     "@element-plus/nuxt": "^1.0.5",
     "@iconify-json/ep": "^1.1.10",
     "@iconify-json/fa6-solid": "^1.1.13",
+    "@nuxt/devtools": "^0.5.5",
     "@nuxtjs/i18n": "8.0.0-beta.12",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",

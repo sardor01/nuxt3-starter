@@ -43,21 +43,6 @@ const features = [
           Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas
           a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
         </p>
-        <BaseButton class="mt-4" loading>Click me</BaseButton>
-        <BasePagination
-          :value="6"
-          :page-count="10"
-          container-class="flex flex-wrap flex-row justify-center items-center text-sm gap-1.5 mt-6 md:text-base md:gap-2 md:mt-8"
-          page-class="rounded-full border first:ml-0 last:mr-0"
-          prev-class="text-red"
-          next-class="text-red"
-          page-link-class="w-8 h-8 md:w-10 md:h-10 rounded-full"
-          prev-link-class="w-6 h-6 md:w-8 md:h-8 rounded-full"
-          next-link-class="w-6 h-6 md:w-8 md:h-8 rounded-full"
-          active-class="bg-red text-white border-red"
-          not-active-class="border-gray"
-          disabled-class="!text-gray"
-        />
       </div>
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
         <dl

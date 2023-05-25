@@ -9,11 +9,6 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
     },
   },
-  css: [
-    '~/assets/css/element/custom.scss',
-    '~/assets/fonts/roboto.scss',
-    '~/assets/css/tailwind.css',
-  ],
   components: [
     {
       path: '~/components',
@@ -25,6 +20,14 @@ export default defineNuxtConfig({
       prefix: '',
     },
   ],
+  css: [
+    '~/assets/css/element/custom.scss',
+    '~/assets/fonts/roboto.scss',
+    '~/assets/css/tailwind.css',
+  ],
+  devtools: {
+    enabled: true,
+  },
   modules: [
     '@element-plus/nuxt',
     '@nuxtjs/i18n',
