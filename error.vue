@@ -70,7 +70,7 @@ const handleError = () => clearError({ redirect: '/' })
           {{ t(`pages.error.${errorDetails[error.statusCode].description}`) }}
         </span>
         <div class="mt-2 flex justify-center">
-          <BaseButton variant="red" @click="handleError">
+          <BaseButton size="md" variant="red" @click="handleError">
             {{ t('buttons.backHome') }}
           </BaseButton>
         </div>

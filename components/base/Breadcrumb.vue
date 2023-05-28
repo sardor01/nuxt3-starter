@@ -13,15 +13,10 @@ const { t } = useI18n()
       <li
         v-for="(item, index) in items"
         :key="item.id"
-        class="inline-flex h-7 select-none items-center gap-x-2 text-sm font-semibold uppercase"
+        class="inline-flex h-7 select-none items-center gap-x-2 text-sm font-medium uppercase"
       >
         <span v-if="index" class="mb-0.5 leading-none">/</span>
-        <AppLink
-          :to="item.to"
-          :centered="false"
-          theme="light"
-          class="aria-current-page:pointer-events-none"
-        >
+        <AppLink :to="item.to" left class="aria-current-page:pointer-events-none">
           {{ item.dynamic ? item.title : t(item.title) }}
         </AppLink>
       </li>

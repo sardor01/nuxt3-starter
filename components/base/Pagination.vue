@@ -181,8 +181,6 @@ onBeforeUpdate(() => {
   <ul :class="containerClass">
     <li v-if="firstLastButton" :class="[pageClass, firstPageSelected() ? disabledClass : '']">
       <BaseButton
-        variant="none"
-        size="none"
         :class="pageLinkClass"
         :tabindex="firstPageSelected() ? -1 : 0"
         @click="selectFirstPage()"
@@ -197,8 +195,6 @@ onBeforeUpdate(() => {
       :class="[prevClass, firstPageSelected() ? disabledClass : '']"
     >
       <BaseButton
-        variant="none"
-        size="none"
         :class="prevLinkClass"
         :tabindex="firstPageSelected() ? -1 : 0"
         @click="prevPage()"
@@ -218,30 +214,16 @@ onBeforeUpdate(() => {
         page.breakView ? breakViewClass : '',
       ]"
     >
-      <BaseButton
-        v-if="page.breakView"
-        variant="none"
-        size="none"
-        :class="[pageLinkClass, breakViewLinkClass]"
-        tabindex="0"
-      >
+      <BaseButton v-if="page.breakView" :class="[pageLinkClass, breakViewLinkClass]" tabindex="0">
         <slot name="breakViewContent">
           {{ breakViewText }}
         </slot>
       </BaseButton>
-      <BaseButton
-        v-else-if="page.disabled"
-        variant="none"
-        size="none"
-        :class="pageLinkClass"
-        tabindex="0"
-      >
+      <BaseButton v-else-if="page.disabled" :class="pageLinkClass" tabindex="0">
         {{ page.content }}
       </BaseButton>
       <BaseButton
         v-else
-        variant="none"
-        size="none"
         :class="pageLinkClass"
         tabindex="0"
         @click="handlePageSelected(page.index + 1)"
@@ -256,8 +238,6 @@ onBeforeUpdate(() => {
       :class="[nextClass, lastPageSelected() ? disabledClass : '']"
     >
       <BaseButton
-        variant="none"
-        size="none"
         :class="nextLinkClass"
         :tabindex="lastPageSelected() ? -1 : 0"
         @click="nextPage()"
@@ -269,8 +249,6 @@ onBeforeUpdate(() => {
 
     <li v-if="firstLastButton" :class="[pageClass, lastPageSelected() ? disabledClass : '']">
       <BaseButton
-        variant="none"
-        size="none"
         :class="pageLinkClass"
         :tabindex="lastPageSelected() ? -1 : 0"
         @click="selectLastPage()"

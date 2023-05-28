@@ -20,7 +20,7 @@ const { t } = useI18n()
         </g>
       </svg>
     </div>
-    <p class="mt-2 font-semibold uppercase">
+    <p class="mt-2 font-medium uppercase">
       {{ t('general.noDataFound') }}
     </p>
   </div>

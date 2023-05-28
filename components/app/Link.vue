@@ -1,34 +1,20 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-}
-</script>
-
 <script setup lang="ts">
-// eslint-disable-next-line import/first
-import type { RouteLocation, RouteLocationRaw } from 'vue-router'
+import type { NuxtLinkProps } from '#app'
 
-defineProps<{
-  to: RouteLocationRaw
-  theme?: 'light' | 'dark'
-  centered?: boolean
-}>()
+defineProps<NuxtLinkProps>()
+
+defineOptions({
+  inheritAttrs: false,
+})
+
 const localePath = useLocalePath()
 </script>
 
 <template>
-  <NuxtLink
-    v-slot="{ isExactActive, href: slotHref, navigate }"
-    :to="localePath(to as unknown as RouteLocation)"
-    custom
-  >
+  <NuxtLink v-slot="{ isExactActive, href, navigate }" :to="localePath(to as any)" custom>
     <BaseButton
       v-bind="$attrs"
-      variant="none"
-      size="none"
-      :theme="theme"
-      :centered="centered"
-      :href="slotHref"
+      :href="href"
       :aria-current="isExactActive ? 'page' : undefined"
       @click="navigate"
     >

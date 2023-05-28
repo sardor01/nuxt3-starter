@@ -1,45 +1,16 @@
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    type?: 'button' | 'submit'
-    variant?: 'blue' | 'red' | 'none'
-    size?: 'sm' | 'md' | 'lg' | 'none'
-    theme?: 'light' | 'dark'
-    href?: string
-    link?: boolean
-    loading?: boolean
-    disabled?: boolean
-    centered?: boolean
-    active?: boolean
-    exactActive?: boolean
-  }>(),
-  {
-    type: 'button',
-    variant: 'blue',
-    size: 'md',
-    theme: 'dark',
-    centered: true,
-  },
-)
+const props = defineProps<{
+  href?: string
+  type?: 'button' | 'reset' | 'submit'
+  size?: 'sm' | 'md' | 'lg'
+  variant?: 'blue' | 'red'
+  custom?: boolean
+  disabled?: boolean
+  left?: boolean
+  loading?: boolean
+}>()
 
-const disableButton = computed(() => {
-  return props.disabled || props.loading
-})
-
-const btnVariant = computed(() => {
-  switch (props.variant) {
-    case 'red': {
-      if (props.link) return 'text-red focus-visible:ring-red/30'
-      return 'border border-red bg-red text-white hover:border-red/80 hover:bg-red/80 focus-visible:ring-red/30'
-    }
-    case 'blue': {
-      if (props.link) return 'text-blue focus-visible:ring-blue/30'
-      return 'border border-blue bg-blue text-white hover:border-blue/80 hover:bg-blue/80 focus-visible:ring-blue/30'
-    }
-    default:
-      return props.theme === 'dark' ? 'focus-visible:ring-blue/30' : 'focus-visible:ring-light'
-  }
-})
+const btnDisabled = computed(() => props.disabled || props.loading)
 
 const btnSize = computed(() => {
   switch (props.size) {
@@ -56,6 +27,19 @@ const btnSize = computed(() => {
       return ''
   }
 })
+
+const btnVariant = computed(() => {
+  switch (props.variant) {
+    case 'red':
+      return 'border border-red bg-red text-white hover:border-red/80 hover:bg-red/80 focus-visible:ring-red/30'
+
+    case 'blue':
+      return 'border border-blue bg-blue text-white hover:border-blue/80 hover:bg-blue/80 focus-visible:ring-blue/30'
+
+    default:
+      return ''
+  }
+})
 </script>
 
 <template>
@@ -63,13 +47,14 @@ const btnSize = computed(() => {
     :is="href ? 'a' : 'button'"
     :href="href"
     :type="href ? undefined : type"
-    :disabled="href ? undefined : disableButton"
-    class="inline-flex select-none items-center whitespace-nowrap font-semibold transition-colors duration-150 ease-in-out focus:outline-none focus-visible:ring"
+    :disabled="href ? undefined : btnDisabled"
+    class="select-none transition-colors duration-150 ease-in-out focus:outline-none focus-visible:ring"
     :class="[
-      btnVariant,
       btnSize,
-      centered && 'justify-center text-center',
-      disableButton && 'pointer-events-none opacity-80',
+      btnVariant,
+      !custom && 'inline-flex items-center whitespace-nowrap font-medium',
+      !left && 'justify-center text-center',
+      btnDisabled && 'pointer-events-none opacity-80',
     ]"
   >
     <span v-if="loading" class="i-fa6-solid-spinner h-5 w-5 animate-spin" />

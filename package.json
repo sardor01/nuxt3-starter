@@ -22,13 +22,13 @@
     "cleanup:nm": "nuxt cleanup && rimraf node_modules && pnpm install"
   },
   "dependencies": {
+    "@floating-ui/vue": "^1.0.0",
     "@pinia/nuxt": "^0.4.11",
-    "@popperjs/core": "^2.11.7",
     "@tinymce/tinymce-vue": "^5.1.0",
     "@vee-validate/nuxt": "^4.9.5",
     "@vee-validate/yup": "^4.9.5",
     "pinia": "^2.1.3",
-    "yup": "^1.1.1"
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.3",
@@ -42,7 +42,7 @@
     "@nuxtjs/i18n": "8.0.0-beta.12",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^20.2.3",
+    "@types/node": "^20.2.5",
     "@vueuse/core": "^10.1.2",
     "@vueuse/nuxt": "^10.1.2",
     "autoprefixer": "^10.4.14",

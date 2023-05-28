@@ -25,15 +25,8 @@ const onSubmit = handleSubmit((values) => {
         class="mx-auto my-6 max-w-xl rounded-[var(--el-border-radius-base)] bg-white p-6 md:my-8 md:p-8 lg:my-10 lg:p-10"
         @submit="onSubmit"
       >
-        <AdminInput name="name" label="Login" placeholder="Input your login" />
-        <AdminInput
-          name="password"
-          type="password"
-          label="Password"
-          placeholder="Input your password"
-          show-password
-        />
-
+        <AdminInput name="name" label="Login" />
+        <AdminInput name="password" type="password" label="Password" show-password />
         <ElButton
           type="primary"
           size="large"

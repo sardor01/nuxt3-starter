@@ -35,7 +35,7 @@ const features = [
   <div class="bg-white py-20 sm:py-28">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:text-center">
-        <h2 class="text-base font-semibold leading-7 text-blue">Deploy faster</h2>
+        <h2 class="text-base font-medium leading-7 text-blue">Deploy faster</h2>
         <p class="mt-2 text-3xl font-bold tracking-tight text-dark sm:text-4xl">
           Everything you need to deploy your app
         </p>
@@ -43,13 +43,16 @@ const features = [
           Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas
           a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
         </p>
+        <div class="my-4">
+          <AppLangSwitcher />
+        </div>
       </div>
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
         <dl
           class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
         >
           <div v-for="feature in features" :key="feature.name" class="relative pl-16">
-            <dt class="text-base font-semibold leading-7 text-dark">
+            <dt class="text-base font-medium leading-7 text-dark">
               <div
                 class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue"
               >
