@@ -18,7 +18,7 @@ const isHexColor = (hexColor: string) => {
     typeof hexColor === 'string' &&
     hexColor.startsWith('#') &&
     hex.length === 6 &&
-    !isNaN(Number(`0x${hex}`))
+    !Number.isNaN(Number(`0x${hex}`))
   )
 }
 
