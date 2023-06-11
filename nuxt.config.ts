@@ -54,6 +54,9 @@ export default defineNuxtConfig({
     pages: {
       admin: false,
     },
+    vueI18n: {
+      legacy: false,
+    },
   },
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
