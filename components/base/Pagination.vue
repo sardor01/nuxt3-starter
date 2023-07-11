@@ -4,7 +4,7 @@ const props = withDefaults(
     value: number
     pageCount: number
     forcePage?: number
-    clickHandler?: Function
+    clickHandler?: any
     pageRange?: number
     marginPages?: number
     breakViewText?: string

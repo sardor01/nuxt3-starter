@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { NuxtLinkProps } from '#app'
 
-defineProps<NuxtLinkProps>()
-
 defineOptions({
   inheritAttrs: false,
 })
+
+defineProps<NuxtLinkProps>()
 
 const localePath = useLocalePath()
 </script>
