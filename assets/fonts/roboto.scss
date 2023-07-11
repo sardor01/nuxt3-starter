@@ -9,7 +9,8 @@ $font-weights: (
 @each $w-string, $w-number in $font-weights {
   @font-face {
     font-family: #{$font-family};
-    src: url(#{$common-path}-#{$w-string}.woff2) format('woff2'),
+    src:
+      url(#{$common-path}-#{$w-string}.woff2) format('woff2'),
       url(#{$common-path}-#{$w-string}.woff) format('woff');
     font-weight: #{$w-number};
     font-style: normal;
@@ -17,7 +18,8 @@ $font-weights: (
   }
   @font-face {
     font-family: #{$font-family};
-    src: url(#{$common-path}-#{$w-string}italic.woff2) format('woff2'),
+    src:
+      url(#{$common-path}-#{$w-string}italic.woff2) format('woff2'),
       url(#{$common-path}-#{$w-string}italic.woff) format('woff');
     font-weight: #{$w-number};
     font-style: italic;
