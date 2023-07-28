@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { defaultLocale, locales } from './config'
 
 export default defineNuxtConfig({
