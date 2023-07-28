@@ -1,71 +1,47 @@
 name: CI
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
-env:
-  NODE_VERSION: 18.x
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  lint-and-format:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ${{ matrix.os }}
+
+    timeout-minutes: 10
+
+    strategy:
+      matrix:
+        node_version: [16.x, 18.x]
+        os: [ubuntu-latest]
+      fail-fast: false
+
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
+
+      - name: set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ matrix.node_version }}
           cache: pnpm
 
-      - name: Install dependencies
+      - name: install
         run: pnpm install --frozen-lockfile
 
-      - name: Lint and format
+      - name: lint and format
         run: pnpm lint && pnpm format
 
-  typecheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Typecheck
+      - name: typecheck
         run: pnpm typecheck
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Test
+      - name: test
         run: pnpm test
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
+      - name: build
         run: pnpm build
