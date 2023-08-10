@@ -12,11 +12,11 @@ Recommend using [VS Code](https://code.visualstudio.com) with [Volar](https://gi
 
 ## Steps to get started on a project
 
-1. remove LICENSE
-2. modify README.md
-3. modify nuxt.config.ts
+1. Remove `LICENSE`
+2. Modify `README.md`
+3. Modify `nuxt.config.ts`
 
-## Steps to remove Admin Panel (for unix based OS)
+## Steps to remove Admin Panel
 
 1. Run these commands
 
@@ -26,7 +26,7 @@ rm -rf assets/css/element components/admin layouts/defaultAdmin.vue middleware p
 pnpm remove @pinia/nuxt @tinymce/tinymce-vue pinia @element-plus/nuxt @iconify-json/ep element-plus
 ```
 
-2. Modify components/icons, plugins/fetch.ts, .env.template, nuxt.config.ts, tailwind.config.cjs
+2. Modify `components/icons`, `plugins/fetch.ts`, `.env.template`, `nuxt.config.ts`, `tailwind.config.cjs`
 
 ## Useful Links
 
