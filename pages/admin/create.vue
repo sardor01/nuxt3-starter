@@ -21,6 +21,8 @@ const formSchema = object({
 const { handleSubmit } = useForm({ validationSchema: toTypedSchema(formSchema) })
 
 const onSubmit = handleSubmit((values) => {
+  // TODO: handle values
+  // eslint-disable-next-line no-console
   console.log(values)
 })
 </script>

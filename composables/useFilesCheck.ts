@@ -21,6 +21,7 @@ interface Props {
 export const useFilesCheck = ({ accept, limitSize = 8, limitCount = 1 }: Props) => {
   const setErrorMessage = (msg: string) => {
     // TODO: notify user
+    // eslint-disable-next-line no-alert
     alert(msg)
   }
 

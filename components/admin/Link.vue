@@ -1,21 +1,17 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-}
-</script>
-
 <script setup lang="ts">
-// eslint-disable-next-line import/first
-import type { RouteLocation, RouteLocationRaw } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 defineProps<{
   to: RouteLocationRaw
 }>()
-const localePath = useLocalePath()
 </script>
 
 <template>
-  <NuxtLink v-slot="{ href, navigate }" :to="localePath(to as unknown as RouteLocation)" custom>
+  <NuxtLink v-slot="{ href, navigate }" :to="to" custom>
     <ElButton tag="a" v-bind="$attrs" :href="href" @click="navigate">
       <slot />
     </ElButton>

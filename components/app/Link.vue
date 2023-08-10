@@ -6,12 +6,10 @@ defineOptions({
 })
 
 defineProps<NuxtLinkProps>()
-
-const localePath = useLocalePath()
 </script>
 
 <template>
-  <NuxtLink v-slot="{ isExactActive, href, navigate }" :to="localePath(to as any)" custom>
+  <NuxtLink v-slot="{ isExactActive, href, navigate }" :to="to" custom>
     <BaseButton
       v-bind="$attrs"
       :href="href"

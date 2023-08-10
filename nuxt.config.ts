@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     importStyle: 'scss',
   },
   i18n: {
-    strategy: 'prefix_except_default',
+    strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: true,
       alwaysRedirect: true,
@@ -51,13 +51,6 @@ export default defineNuxtConfig({
     defaultLocale,
     lazy: true,
     langDir: 'locales',
-    customRoutes: 'config',
-    pages: {
-      admin: false,
-    },
-    vueI18n: {
-      legacy: false,
-    },
   },
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
