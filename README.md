@@ -10,6 +10,24 @@
 
 Recommend using [VS Code](https://code.visualstudio.com) with [Volar](https://github.com/johnsoncodehk/volar) to get the best experience (remove Vetur).
 
+## Steps to get started on a project
+
+1. remove LICENSE
+2. modify README.md
+3. modify nuxt.config.ts
+
+## Steps to remove Admin Panel (for unix based OS)
+
+1. Run these commands
+
+```sh
+rm -rf assets/css/element components/admin layouts/defaultAdmin.vue middleware pages/admin stores
+
+pnpm remove @pinia/nuxt @tinymce/tinymce-vue pinia @element-plus/nuxt @iconify-json/ep element-plus
+```
+
+2. Modify components/icons, plugins/fetch.ts, .env.template, nuxt.config.ts, tailwind.config.cjs
+
 ## Useful Links
 
 - [Nuxt 3 Docs Guide](https://nuxt.com/docs/guide)
