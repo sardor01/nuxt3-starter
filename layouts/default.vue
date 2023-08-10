@@ -32,7 +32,7 @@ const title = computed(() => {
       </template>
     </Head>
     <Body>
-      <div class="relative flex bg-white text-dark">
+      <div class="relative flex bg-white text-neutral-950">
         <div class="relative flex min-h-screen max-w-full flex-auto flex-col backface-hidden">
           <TheHeader />
           <div class="flex w-full flex-[1_0_auto] p-0">

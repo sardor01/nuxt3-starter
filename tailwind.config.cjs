@@ -30,20 +30,6 @@ module.exports = {
     './error.vue',
   ],
   theme: {
-    colors: {
-      inherit: 'inherit',
-      current: 'currentColor',
-      transparent: 'transparent',
-      white: '#ffffff',
-      black: '#000000',
-      light: '#f1f3f5',
-      dark: '#1a1a1a',
-      gray: '#374151',
-      blue: '#0284c7',
-      red: '#89001a',
-      green: '#04d65c',
-      yellow: '#ffb131',
-    },
     screens: {
       xs: '475px',
       ...defaultTheme.screens,
@@ -52,16 +38,13 @@ module.exports = {
       aria: {
         'current-page': 'current="page"',
       },
-      fontFamily: {
-        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
-      },
       lineHeight: {
         'extra-normal': '1.5715',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            '--tw-prose-bullets': theme('colors.blue'),
+            '--tw-prose-bullets': theme('colors.sky.600'),
             maxWidth: '100%',
             'ul > li': {
               'padding-left': 0,
@@ -81,9 +64,7 @@ module.exports = {
   },
   plugins: [
     backfaceVisibility,
-    iconsPlugin({
-      collections: getIconCollections(['ep', 'fa6-solid']),
-    }),
+    iconsPlugin({ collections: getIconCollections(['ep', 'fa6-solid']) }),
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
   ],

@@ -31,10 +31,10 @@ const btnSize = computed(() => {
 const btnVariant = computed(() => {
   switch (props.variant) {
     case 'red':
-      return 'border border-red bg-red text-white hover:border-red/80 hover:bg-red/80 focus-visible:ring-red/30'
+      return 'border border-red-700 bg-red-700 text-white hover:border-red-700/80 hover:bg-red-700/80 focus-visible:ring-red-700/30'
 
     case 'blue':
-      return 'border border-blue bg-blue text-white hover:border-blue/80 hover:bg-blue/80 focus-visible:ring-blue/30'
+      return 'border border-sky-600 bg-sky-600 text-white hover:border-sky-600/80 hover:bg-sky-600/80 focus-visible:ring-sky-600/30'
 
     default:
       return ''

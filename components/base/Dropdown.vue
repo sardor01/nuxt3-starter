@@ -83,7 +83,7 @@ watch(
     >
       <div
         class="divide-y overflow-y-auto rounded-md py-1 shadow-xl"
-        :class="menuClass || 'divide-blue/50 bg-light text-dark'"
+        :class="menuClass || 'divide-sky-600/50 bg-gray-100 text-neutral-950'"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="options-menu"

@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
     },
   },
+
   components: [
     {
       path: '~/components',
@@ -21,14 +22,13 @@ export default defineNuxtConfig({
       prefix: '',
     },
   ],
-  css: [
-    '~/assets/css/element/custom.scss',
-    '~/assets/fonts/roboto.scss',
-    '~/assets/css/tailwind.css',
-  ],
+
+  css: ['~/assets/css/element/custom.scss', '~/assets/css/tailwind.css'],
+
   devtools: {
     enabled: true,
   },
+
   modules: [
     '@element-plus/nuxt',
     '@nuxtjs/i18n',
@@ -36,11 +36,13 @@ export default defineNuxtConfig({
     '@vee-validate/nuxt',
     '@vueuse/nuxt',
   ],
+
   // #region modules
   elementPlus: {
     icon: false,
     importStyle: 'scss',
   },
+
   i18n: {
     strategy: 'no_prefix',
     detectBrowserLanguage: {
@@ -52,19 +54,23 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'locales',
   },
+
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
   },
   // #endregion
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   routeRules: {
     '/admin/**': { ssr: false },
   },
+
   runtimeConfig: {
     public: {
       apiURL: process.env.NUXT_PUBLIC_API_URL,
@@ -72,6 +78,7 @@ export default defineNuxtConfig({
       tinymceKey: process.env.NUXT_PUBLIC_TINYMCE_KEY,
     },
   },
+
   typescript: {
     shim: true,
     strict: true,
@@ -81,6 +88,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   vite: {
     css: {
       preprocessorOptions: {

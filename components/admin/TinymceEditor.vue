@@ -53,9 +53,3 @@ const handleTinyImageUpload = (blobInfo: BlobInfo, success: any, failure: any) =
     />
   </ElFormItem>
 </template>
-
-<style lang="scss">
-.tox-tinymce {
-  font-family: Roboto, sans-serif;
-}
-</style>
