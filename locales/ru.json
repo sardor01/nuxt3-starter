@@ -1,37 +1,37 @@
 {
-  "general": {
-    "noDataFound": "No Data Found"
-  },
-  "menu": {
-    "home": "Home"
-  },
-  "buttons": {
-    "backHome": "Back Home",
-    "login": "Login",
-    "logout": "Logout"
-  },
-  "help": {
-    "fieldRequired": "Field is required",
-    "passwordMin4Length": "Password must be at least 4 characters"
-  },
-  "pages": {
-    "error": {
-      "401": {
-        "title": "Unauthorized",
-        "description": "The request failed because it did not contain valid authentication information for the target resource."
-      },
-      "403": {
-        "title": "Access denied",
-        "description": "Access to this resource is denied"
-      },
-      "404": {
-        "title": "Sorry! Page not found",
-        "description": "The page you are looking for does not exist. It may have been moved or deleted."
-      },
-      "500": {
-        "title": "Internal server error",
-        "description": "The server encountered an unexpected situation that prevented it from fulfilling the request."
-      }
+    "general": {
+        "noDataFound": "No Data Found"
+    },
+    "menu": {
+        "home": "Home"
+    },
+    "buttons": {
+        "backHome": "Back Home",
+        "login": "Login",
+        "logout": "Logout"
+    },
+    "help": {
+        "fieldRequired": "Field is required",
+        "passwordMin4Length": "Password must be at least 4 characters"
+    },
+    "pages": {
+        "error": {
+            "401": {
+                "title": "Unauthorized",
+                "description": "The request failed because it did not contain valid authentication information for the target resource."
+            },
+            "403": {
+                "title": "Access denied",
+                "description": "Access to this resource is denied"
+            },
+            "404": {
+                "title": "Sorry! Page not found",
+                "description": "The page you are looking for does not exist. It may have been moved or deleted."
+            },
+            "500": {
+                "title": "Internal server error",
+                "description": "The server encountered an unexpected situation that prevented it from fulfilling the request."
+            }
+        }
     }
-  }
 }

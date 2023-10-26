@@ -1,24 +1,24 @@
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  $button-font-size: (
-    'large': 16px,
-    'default': 14px,
-    'small': 12px,
-  ),
-  $input-font-size: (
-    'large': 16px,
-    'default': 14px,
-    'small': 12px,
-  )
+    $button-font-size: (
+        'large': 16px,
+        'default': 14px,
+        'small': 12px,
+    ),
+    $input-font-size: (
+        'large': 16px,
+        'default': 14px,
+        'small': 12px,
+    )
 );
 
 $form-item-margin-bottom: (
-  'large': 26px,
-  'default': 22px,
-  'small': 18px,
+    'large': 26px,
+    'default': 22px,
+    'small': 18px,
 );
 
 $form-item-label-top-margin-bottom: (
-  'large': 6px,
-  'default': 4px,
-  'small': 2px,
+    'large': 6px,
+    'default': 4px,
+    'small': 2px,
 );

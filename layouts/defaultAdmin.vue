@@ -1,13 +1,13 @@
 <template>
-  <ElContainer>
-    <AdminSidebar />
-    <ElContainer direction="vertical">
-      <AdminHeader />
-      <ElMain>
-        <BaseContainer>
-          <slot />
-        </BaseContainer>
-      </ElMain>
+    <ElContainer>
+        <AdminSidebar />
+        <ElContainer direction="vertical">
+            <AdminHeader />
+            <ElMain>
+                <BaseContainer>
+                    <slot />
+                </BaseContainer>
+            </ElMain>
+        </ElContainer>
     </ElContainer>
-  </ElContainer>
 </template>

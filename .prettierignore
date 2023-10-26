@@ -31,4 +31,5 @@ dist
 .env
 *.local
 
-pnpm-lock.yaml
+*.yml
+*.yaml

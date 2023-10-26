@@ -1,14 +1,14 @@
 import type { RouteLocationRaw } from 'vue-router'
 
 export interface Link {
-  id: string
-  title: string
-  to: RouteLocationRaw
-  dynamic?: boolean
+    id: string
+    title: string
+    to: RouteLocationRaw
+    dynamic?: boolean
 }
 
 export const useSiteLinks = () => {
-  const headerLinks: Link[] = []
+    const headerLinks: Link[] = []
 
-  return { headerLinks }
+    return { headerLinks }
 }
