@@ -56,7 +56,7 @@ export default defineNuxtConfig({
     },
 
     pinia: {
-        autoImports: ['defineStore', 'storeToRefs'],
+        storesDirs: [],
     },
     // #endregion
 
