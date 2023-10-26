@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ['@antfu', 'plugin:prettier/recommended'],
+  extends: ['@antfu/eslint-config-vue', 'plugin:prettier/recommended'],
   rules: {
     'antfu/if-newline': 'off',
     'antfu/top-level-function': 'off',
