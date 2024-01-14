@@ -1,5 +1,5 @@
 export default defineI18nConfig(() => {
-    return {
-        legacy: false,
-    }
+  return {
+    legacy: false,
+  }
 })

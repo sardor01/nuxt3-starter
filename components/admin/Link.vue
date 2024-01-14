@@ -2,18 +2,18 @@
 import type { RouteLocationRaw } from 'vue-router'
 
 defineOptions({
-    inheritAttrs: false,
+  inheritAttrs: false,
 })
 
 defineProps<{
-    to: RouteLocationRaw
+  to: RouteLocationRaw
 }>()
 </script>
 
 <template>
-    <NuxtLink v-slot="{ href, navigate }" :to="to" custom>
-        <ElButton tag="a" v-bind="$attrs" :href="href" @click="navigate">
-            <slot />
-        </ElButton>
-    </NuxtLink>
+  <NuxtLink v-slot="{ href, navigate }" :to="to" custom>
+    <ElButton tag="a" v-bind="$attrs" :href="href" @click="navigate">
+      <slot />
+    </ElButton>
+  </NuxtLink>
 </template>

@@ -1,20 +1,20 @@
 /* form-item */
 .app-form-item {
-    &.is-error:last-of-type {
-        padding-bottom: 14px;
-    }
+  &.is-error:last-of-type {
+    padding-bottom: 14px;
+  }
 
-    .el-form--label-top .el-form-item__error {
-        margin-left: 4px;
-    }
+  .el-form--label-top .el-form-item__error {
+    margin-left: 4px;
+  }
 
-    .el-input--large .el-input__wrapper {
-        padding: 2px 15px;
-    }
+  .el-input--large .el-input__wrapper {
+    padding: 2px 15px;
+  }
 
-    .el-input--large .el-textarea__inner {
-        padding: 10px 15px;
-    }
+  .el-input--large .el-textarea__inner {
+    padding: 10px 15px;
+  }
 }
 
 [type='text'],
@@ -25,8 +25,8 @@
 [multiple],
 textarea,
 select {
-    &.el-input__inner:focus {
-        box-shadow: none;
-        border: none;
-    }
+  &.el-input__inner:focus {
+    box-shadow: none;
+    border: none;
+  }
 }
